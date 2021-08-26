@@ -762,10 +762,11 @@ a:focus, a:hover, a:active, a:visited {
 .heycisco-proj .main-block .cards {
   margin-top: 3em;
   opacity: 0;
+  pointer-events: none;
   transform-origin: 50% 0;
   transition-duration: 0.5s;
   -o-transition-timing-function: ease-out;
-  transition-property: opacity transform;
+  transition-property: opacity;
 }
 
 .heycisco-proj .main-block .cards .wrapper {
@@ -910,9 +911,10 @@ a:focus, a:hover, a:active, a:visited {
 
 .heycisco-proj .main-block .main-block__page.cards-active .cards {
   opacity: 1;
+  pointer-events: auto;
   transition-duration: 0.25s;
   -o-transition-timing-function: ease-in;
-  transition-property: opacity transform;
+  transition-property: opacity;
 }
 
 .heycisco-proj .main-block .information {

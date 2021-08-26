@@ -1,10 +1,11 @@
 .cards {
 	margin-top: 3em;
 	opacity: 0;
+	pointer-events: none;
 	// transform: scale3d(0, 0, 1) translateY(-30%);
 	transform-origin: 50% 0;
 	@include transition-out;
-	transition-property: opacity transform;
+	transition-property: opacity;
 	.wrapper {
 		display: flex;
 		flex-wrap: wrap;
@@ -119,9 +120,10 @@
 .main-block__page.cards-active {
 	.cards {
 		opacity: 1;
+		pointer-events: auto;
 		// transform: scale3d(1, 1, 1) translateY(0);
 		@include transition-in;
-		transition-property: opacity transform;
+		transition-property: opacity;
 	}
 }
 
