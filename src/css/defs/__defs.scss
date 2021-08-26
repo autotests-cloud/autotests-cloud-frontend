@@ -1,0 +1,42 @@
+// Глобальные стили
+.heycisco-proj {
+	// <= Класс у body
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	color: var(--color-text);
+	background: var(--color-white);
+	font-family: $font;
+	font-weight: 400;
+
+	.main-header,
+	.main-footer,
+	.main-block {
+		padding: var(--section-padding) var(--grid-sides);
+		width: 100%;
+		max-width: var(--page-width);
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+	}
+	.main-block {
+		padding: var(--section-padding) 0;
+		max-width: var(--content-width);
+		flex: 1 1 auto;
+		align-content: flex-start;
+		line-height: 1.5;
+		font-size: 16px;
+		main {
+			// <= Общий для всех видов контента блок
+			width: 100%;
+			padding-top: 2rem;
+			position: relative;
+			&.wrapper {
+			}
+		}
+	}
+	h1, h2, h3, h4, h5 {
+		font-weight: inherit;
+	}
+}

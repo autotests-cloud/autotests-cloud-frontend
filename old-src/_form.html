@@ -1,0 +1,55 @@
+<form id="objective" class="start" onsubmit="event.preventDefault()">
+	<label>Бесплатные автотесты для вашего сайта:</label>
+	<input type="url" placeholder="https://" id="input-title" name="url" key="test_title">
+	<div class="buttons-block first">
+		<button class="main" key="checkout_button"><img src="img/icon_1.svg">Сгенерировать</button>
+		<div class="captcha">
+			<div class="g-recaptcha" data-theme="light" data-sitekey="6LfGt8caAAAAALiwMqXHiwZnq1eKtBUa7wK_axWt"></div>
+			<span id="captchaError" class="alert alert-danger col-sm-4" style="display:none"></span>
+		</div>
+	</div>
+	<button class="options"></button>
+
+
+	
+	<div class="checkboxes">
+		<div class="form-group checked">
+			<input type="checkbox" id="option1" name="githubRepo" checked>
+			<label for="option1">Сгенерировать репозиторий в GitHub</label>
+			<div class="form-group">
+				<input type="checkbox" id="option2" class="github" name="githubTests" checked>
+				<label for="option2">Сгенерировать 2 автотеста</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<input type="checkbox" id="option3" name="jenkinsJob" checked>
+			<label for="option3">Сгенерировать задачу в Jenkins</label>
+			<div class="form-group">
+				<input type="checkbox" id="option4" class="jenkins" name="jenkinsRun" checked>
+				<label for="option4">Запустить задачу в Jenkins</label>
+			</div>
+			<div class="form-group">
+				<input type="checkbox" id="option5" class="jenkins" name="jenkinsAllure" checked >
+				<label for="option5">Сформировать отчет со скриншотами и видео</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<input type="checkbox" id="option6" name="telegramNotification" checked>
+			<label for="option6">Отправить уведомление в Telegram</label>
+		</div>
+		<div class="form-group">
+			<input type="checkbox" id="option8" name="jiraIntegration" checked>
+			<label for="option8">Интегрировать с задачей в Jira</label>
+		</div>
+		<div class="form-group">
+			<input type="checkbox" id="option7" name="allureTestops" checked>
+			<label for="option7">Интегрировать с проектом в TMS Allure TestOps</label>
+		</div>
+
+
+		<button class="small modal"><img src="img/plus-solid.svg">Добавить ручной тест-кейс для автоматизации</button>
+ 
+		<ul id="tc-list" class="added-tc">
+		</ul>
+	</div>
+</form>

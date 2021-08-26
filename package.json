@@ -1,18 +1,24 @@
 {
-	"name": "gulp_one",
+	"name": "autotests-cloud-frontend",
 	"version": "1.0.0",
-	"description": "Сборка 0",
+	"description": "blank project",
 	"main": "index.html",
+	"homepage": "https://github.com/heycisco",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/heycisco/blank-tpl"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"author": "T",
+	"author": "heycisco",
 	"license": "ISC",
 	"devDependencies": {
 		"browser-sync": "^2.26.14",
 		"del": "^6.0.0",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^7.0.1",
+		"gulp-babel": "^8.0.0",
 		"gulp-clean-css": "^4.3.0",
 		"gulp-file-include": "^2.3.0",
 		"gulp-group-css-media-queries": "^1.2.2",
@@ -25,8 +31,7 @@
 		"rename": "^1.0.4"
 	},
 	"dependencies": {
-		"jquery": "^3.6.0",
-		"sockjs-client": "^1.5.1",
-		"stompjs": "^2.3.3"
+		"gulp-remove-html-comments": "^1.0.1",
+		"gulp-replace": "^1.1.3"
 	}
 }

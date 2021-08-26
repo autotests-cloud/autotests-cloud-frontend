@@ -1,0 +1,71 @@
+:root {
+
+// Цвета
+	--color-black: #000000;
+	--color-text: #3E4462;
+	--color-orange: #CD5920;
+	--color-orange2: #B74615;
+	--color-gray: #727F8C;
+	--color-placeholder: #B4BDBF;
+	--color-borders: #D5DDE2;
+	--color-background: #EFF2F6;
+	--color-white: #FFFFFF;
+
+	--borders-cards: 1px solid var(--color-borders);
+	--box-shadow: 0 3px 10px #00000030;
+
+// Размеры
+	--pictogram-size: 29.5px;
+	--pictogram-size-cards: 22px;
+	--objects-indents1: 0.5em;
+	--objects-indents2: 2rem;
+	--cards--indent: 24px;
+
+// Скругления
+	--radius1: 9px;
+	--radius2: 4px;
+
+// Макет
+	// Глобальный корректор значений
+	--c: 1;
+	// Ограничение ширины страницы
+	--page-width: 1440px;
+	// Отступ контента
+	--content-indents: calc(48px * var(--c));
+	// Количество колонок
+	--grid-columns: 12;
+	// Отступы от края экрана
+	--grid-sides: calc(32px * var(--c));
+	// Отступы между колонками и по бокам секций
+	--grid-gutter: calc(12px * var(--c));
+	// Отступы сверху/снизу секций
+	--section-padding: var(--grid-gutter);
+	// Ограничение ширины контента
+	// --content-width: calc(100% + var(--grid-gutter) - ((var(--grid-gutter)  + var(--grid-column-width)) * 2)); // Ширина контента -2 колонки
+	--content-width: var(--page-width); 
+
+
+// Адаптивность
+	@media (max-width: 1024px) {
+		--c: 0.85;
+		--grid-columns: 8;
+	}
+	@media (max-width: 760px) {
+		--c: 0.6;
+		--grid-columns: 4;
+		--content-width: 100%;
+	}
+}
+
+// SCSS переменные
+
+$font: 'Inter', sans-serif;
+
+@mixin transition-in {
+	transition-duration: 0.25s;
+	-o-transition-timing-function: ease-in;
+}
+@mixin transition-out {
+	transition-duration: 0.5s;
+	-o-transition-timing-function: ease-out;
+}

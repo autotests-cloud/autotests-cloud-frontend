@@ -1,0 +1,228 @@
+button {
+	background: unset;
+	display: inline-flex;
+	align-items: center;
+	font-weight: 500;
+	@include transition-out;
+	svg {
+		width: 1em;
+		margin-right: var(--objects-indents1);
+		@include transition-out;
+	}
+	&:hover {
+		@include transition-in;
+		svg {
+			@include transition-in;
+		}
+	}
+}
+input#input-title, button.main {
+	border-radius: var(--radius1);
+	padding: 0 1.5em;
+	font-size: 1.4rem;
+}
+.form .group {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	height: 3.4rem;
+	margin: var(--grid-gutter);
+	width: 680px;
+	>*:first-child {
+		margin-right: var(--grid-gutter);
+	}
+
+}
+input#input-title {
+	font-weight: 400;
+	background: var(--color-background);
+	padding: 0 0.7em;
+	flex: 1 1 66%;
+	color: var(--color-text);
+	border: 2px solid var(--color-background);
+	@include transition-out;
+	transition-property: border;
+	&::placeholder {
+		color: var(--color-placeholder);
+	}
+	&:focus {
+		border: 2px solid var(--color-borders);
+		@include transition-in;
+		transition-property: border;
+	}
+}
+button.main {
+	background: var(--color-orange);
+	color: var(--color-white);
+	flex: 0 0 33%;
+	transition-property: background;
+	svg {
+		margin-right: var(--objects-indents1);
+		height: 1em;
+	}
+	&:hover {
+		background: var(--color-orange2);
+		transition-property: background;
+	}
+}
+.options-footer-elements {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: var(--objects-indents2);
+	button.main {
+		height: 3.4rem;
+		flex: unset;
+		margin-top: var(--objects-indents1);
+	}
+}
+
+button.options {
+	font-size: 1.2rem;
+	font-weight: 500;
+	position: relative;
+	color: var(--color-gray);
+	transition-property: color;
+	svg {
+		width: 1em;
+		pointer-events: none;
+		color: var(--color-orange);
+		position: absolute;
+		left: 50%;
+		top: 1.2em;
+		transform: translateX(-50%) rotate(0);
+		transition-property: color, top, transform;
+	}
+	&:after {
+		content: "Показать опции";
+	}
+	&:hover {
+		color: var(--color-black);
+		transition-property: color;
+		svg {
+			color: var(--color-orange2);
+			top: 1.4em;
+			transition-property: color, top, transform;
+		}
+	}
+}
+.main-block__page.cards-active button.options {
+	&:after {
+		content: "Скрыть опции";
+	}
+	svg {
+		top: 1.4em;
+		transform: translateX(-50%) rotate(180deg);
+	}
+	&:hover {
+		svg {
+			top: 1.2em;
+		}
+	}
+}
+
+.main-block__page .options-footer-elements button.options {
+	&:after {
+		content: "Скрыть опции";
+	}
+	svg {
+		top: -1em;
+	}
+	&:hover {
+		svg {
+			top: -1.2em;
+		}
+	}
+}
+
+
+
+.checkboxes {
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+.form-group {
+	display: block;
+	margin-bottom: 0.85em;
+
+	input {
+		padding: 0;
+		height: initial;
+		width: initial;
+		margin-bottom: 0;
+		display: none;
+		cursor: pointer;
+	}
+
+	label {
+		position: relative;
+		cursor: pointer;
+		font-size: 0.95rem;
+		font-weight: 500;
+	}
+
+	label:before {
+		content: '';
+		border: 2px solid var(--color-gray);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+		padding: 0.5em;
+		display: inline-block;
+		position: relative;
+		vertical-align: middle;
+		cursor: pointer;
+		margin-right: var(--objects-indents1);
+		border-radius: 3px;
+		top: -0.1em;
+	}
+
+	input+label:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0.1em;
+		left: 0.5em;
+		width: 0.4em;
+		height: 0.8em;
+		border-style: solid;
+		border-color: #fff0;
+		border-width: 0 0.2em 0.2em 0;
+		transform: rotate(45deg);
+		@include transition-out;
+		transition-property: border-color;
+	}
+
+	input:checked+label:after {
+		border-color: var(--color-orange);
+		@include transition-in;
+		transition-property: border-color;
+	}
+
+	&.blocked {
+		pointer-events: none;
+	}
+
+	&.disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	.form-group {
+		margin-left: 1.6em;
+		margin-top: 0.3em;
+		margin-bottom: 0;
+	}
+}
+
+.manual-test-add {
+	font-size: 0.95rem;
+	color: var(--color-orange);
+	transition-property: color;
+	text-align: left;
+	&:hover {
+		color: var(--color-orange2);
+		transition-property: color;
+	}
+}

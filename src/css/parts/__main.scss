@@ -1,0 +1,31 @@
+a {
+	color: var(--color-gray);
+	transition-property: color;
+	@include transition-out;
+	&:hover {
+		color: var(--color-black);
+		transition-property: color;
+		@include transition-in;
+	}
+}
+.start {
+	height: 12rem;
+	overflow: hidden;
+	padding: 0 var(--grid-sides);
+	>.active-section {
+		position: absolute;
+		width: calc(100% - var(--grid-sides)*2);
+	}
+}
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+
+	>h3 {
+		font-size: 1.6rem;
+		font-weight: 500;
+		margin-bottom: var(--objects-indents1);
+	}
+}

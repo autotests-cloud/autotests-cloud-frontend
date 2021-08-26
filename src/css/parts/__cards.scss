@@ -1,0 +1,96 @@
+.cards {
+	margin-top: 3em;
+	opacity: 0;
+	// transform: scale3d(0, 0, 1) translateY(-30%);
+	transform-origin: 50% 0;
+	@include transition-out;
+	transition-property: opacity transform;
+	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.card {
+		background: var(--color-white);
+		width: calc(50% - var(--cards--indent)/2);
+		box-shadow: var(--box-shadow);
+		border-radius: var(--radius1);
+		overflow: hidden;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-right: var(--cards--indent);
+		margin-bottom: var(--cards--indent);
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+
+		img {
+			height: var(--pictogram-size-cards);
+			margin-right: var(--objects-indents1);
+		}
+
+		&__header {
+			background: var(--color-background);
+			padding: var(--objects-indents1);
+			margin-bottom: var(--objects-indents1);
+			width: 100%;
+			border-bottom: var(--borders-cards);
+
+			img {
+				margin-right: calc(var(--objects-indents1)/4);
+			}
+		}
+		&__body-left {
+			margin: 0 var(--objects-indents1);
+			flex: 1 1 60%;
+
+		}
+		&__body-right {
+			margin: 0 var(--objects-indents1) 0 0;
+			flex: 1 1 30%;
+			font-size: 0.8em;
+			color: var(--color-gray);
+		}
+		&__footer {
+			display: flex;
+			flex: 100%;
+			justify-content: space-between;
+			margin-top: var(--objects-indents1);
+			.left {
+				padding: var(--objects-indents1);
+				display: flex;
+				align-items: center;
+			}
+			.right {
+				button {
+					box-sizing: inset;
+					height: 100%;
+					width: 100%;
+					padding: var(--objects-indents1) 2em;
+					border-top: var(--borders-cards);
+					border-left: var(--borders-cards);
+					border-top-left-radius: var(--radius1);
+					border-bottom-right-radius: var(--radius1);
+					background: var(--color-background);
+					&:hover {
+						background: var(--color-borders);
+					}
+				}
+			}
+		}
+	}
+}
+.main-block__page.cards-active {
+	.cards {
+		opacity: 1;
+		// transform: scale3d(1, 1, 1) translateY(0);
+		@include transition-in;
+		transition-property: opacity transform;
+	}
+}
+
+
+
+
+
