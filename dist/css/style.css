@@ -1125,6 +1125,7 @@ a:focus, a:hover, a:active, a:visited {
   padding: var(--grid-sides);
   opacity: 0;
   pointer-events: none;
+  z-index: 999;
 }
 
 .heycisco-proj .manual-test.modal-body .wrapper {
