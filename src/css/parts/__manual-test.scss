@@ -145,6 +145,12 @@
 				}
 			}
 		}
+		textarea {
+			max-width: 100%;
+			min-width: 506px;
+			max-height: 50vh;
+			min-height: 10em;
+	  }
 	}
 }
 

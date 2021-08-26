@@ -1290,6 +1290,13 @@ a:focus, a:hover, a:active, a:visited {
   border-top-right-radius: 0;
 }
 
+.heycisco-proj .manual-test.modal-body .content textarea {
+  max-width: 100%;
+  min-width: 506px;
+  max-height: 50vh;
+  min-height: 10em;
+}
+
 .heycisco-proj.modal {
   overflow: hidden;
   user-select: none;
