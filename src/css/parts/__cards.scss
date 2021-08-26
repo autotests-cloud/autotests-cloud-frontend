@@ -90,6 +90,8 @@
 				min-height: 2.3em;
 				flex: 0 0 auto;
 				button {
+					position: relative;
+					top: 1px;
 					height: 100%;
 					width: 100%;
 					padding: var(--objects-indents1) 2em;

@@ -878,6 +878,8 @@ a:focus, a:hover, a:active, a:visited {
 }
 
 .heycisco-proj .main-block .cards .card__footer .right button {
+  position: relative;
+  top: 1px;
   height: 100%;
   width: 100%;
   padding: var(--objects-indents1) 2em;
@@ -1140,7 +1142,7 @@ a:focus, a:hover, a:active, a:visited {
 .heycisco-proj .manual-test.modal-body .header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
   margin-bottom: var(--objects-indents2);
   background: var(--color-background);
