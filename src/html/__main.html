@@ -1,12 +1,14 @@
 <main class="main-block__page page">
 	@@include('parts/__information.html')
 	<form id="objective" class="start" onsubmit="event.preventDefault()">
-		<div class="wrapper">
+		<div class="wrapper block-first">
 			@@include('parts/__form.html')
 			@@include('parts/__cards.html')
 		</div>
-		@@include('parts/__console.html')
-		@@include('parts/__telegram-window.html')
+		<div class="wrapper block-second">
+			@@include('parts/__console.html')
+			@@include('parts/__telegram-window.html')
+		</div>
 		@@include('parts/__manual-test.html')
 	</form>
 </main>

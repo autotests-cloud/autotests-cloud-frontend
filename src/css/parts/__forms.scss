@@ -3,7 +3,9 @@ button {
 	display: inline-flex;
 	align-items: center;
 	font-weight: 500;
+	justify-content: center;
 	@include transition-out;
+	user-select: none;
 	svg {
 		width: 1em;
 		margin-right: var(--objects-indents1);
@@ -28,6 +30,12 @@ input#input-title, button.main {
 	height: 3.4rem;
 	margin: var(--grid-gutter);
 	width: 680px;
+	position: relative;
+	@media (max-width: 760px) {
+		flex-direction: column;
+		width: 100%;
+		height: unset;
+	}
 	>*:first-child {
 		margin-right: var(--grid-gutter);
 	}
@@ -50,6 +58,11 @@ input#input-title {
 		@include transition-in;
 		transition-property: border;
 	}
+	
+	@media (max-width: 760px) {
+		padding: 0.4em	0.7em;
+		margin-right: 0;
+	}
 }
 button.main {
 	background: var(--color-orange);
@@ -63,6 +76,10 @@ button.main {
 	&:hover {
 		background: var(--color-orange2);
 		transition-property: background;
+	}
+	@media (max-width: 760px) {
+		margin-top: 1em;
+		padding: 0.5em	0.7em;
 	}
 }
 .options-footer-elements {
@@ -162,6 +179,7 @@ button.options {
 		cursor: pointer;
 		font-size: 0.95rem;
 		font-weight: 500;
+		user-select: none;
 	}
 
 	label:before {

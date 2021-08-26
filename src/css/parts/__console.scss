@@ -1,3 +1,80 @@
-.console {
-	display: none;
+$window-close: var(--color-orange);
+$window-minify: #eab045;
+$window-expand: #a7d26a;
+
+
+.cv-code {
+  content-visibility: auto;
+  border-radius: var(--radius1);
+  overflow: hidden;
+  background: var(--color-white);
+  width: 100%;
+  min-height: 30rem;
+  box-shadow: var(--box-shadow);
+
+  &-header {
+    display: flex;
+    align-items: center;
+    background: var(--color-background);
+    color: var(--color-text);
+    text-align: center;
+    padding: var(--objects-indents1) var(--grid-gutter);
+    border-radius: var(--radius1) var(--radius1) 0 0;
+    position: relative;
+    font-family: monospace;
+	 border-bottom: var(--borders-cards);
+  }
+
+  &-buttons {
+    display: flex;
+    gap: var(--objects-indents1);
+
+    .fake-button[data-close] {
+      width: .7rem;
+      height: .7rem;
+      border-radius: 50%;
+      background: $window-close;
+    }
+
+    .fake-button[data-minify] {
+      width: .7rem;
+      height: .7rem;
+      border-radius: 50%;
+      background: $window-minify;
+    }
+
+    .fake-button[data-expand] {
+      width: .7rem;
+      height: .7rem;
+      border-radius: 50%;
+      background: $window-expand;
+    }
+  }
+
+  &-title {
+    margin: 0 auto;
+	 padding: 0 var(--grid-gutter);
+    display: block;
+  }
+
+  .content {
+    color: var(--color-gray);
+    padding: var(--grid-gutter);
+    font-size: 0.9rem;
+
+    .instruction {
+      display: block;
+      padding: 0 0 7px 0;
+    }
+
+    .user {
+      color: var(--color-orange);
+    }
+
+    .path,
+    .command {
+      color: var(--color-black);
+		font-weight: 500;
+    }
+  }
 }

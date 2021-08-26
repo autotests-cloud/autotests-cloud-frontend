@@ -12,9 +12,40 @@ a {
 	height: 12rem;
 	overflow: hidden;
 	padding: 0 var(--grid-sides);
-	>.active-section {
+	position: relative;
+	@media (max-width: 760px) {
+		margin-top: 1em;
+	}
+	>.wrapper {
 		position: absolute;
 		width: calc(100% - var(--grid-sides)*2);
+		// pointer-events: none;
+	}
+	.block-first {
+		opacity: 1;
+		@include transition-in;
+		transition-property: opacity;
+		pointer-events: auto;
+	}
+	.block-second {
+		opacity: 0;
+		@include transition-out;
+		transition-property: opacity;
+		pointer-events: none;
+	}
+	&.hidden {
+		.block-first {
+			opacity: 0;
+			@include transition-out;
+			transition-property: opacity;
+			pointer-events: none;
+		}
+		.block-second {
+			opacity: 1;
+			@include transition-in;
+			transition-property: opacity;
+			pointer-events: auto;
+		}
 	}
 }
 .form {
@@ -27,5 +58,29 @@ a {
 		font-size: 1.6rem;
 		font-weight: 500;
 		margin-bottom: var(--objects-indents1);
+		@media (max-width: 760px) {
+			font-size: 1.1em;
+		}
+	}
+}
+.wrapper.block-second {
+	display: flex;
+	align-items: flex-start;
+	@media (max-width: 760px) {
+		flex-direction: column;
+	}
+	section.console {
+		width: calc(50% - var(--grid-gutter)/2);
+		margin-right: var(--grid-gutter);
+		@media (max-width: 760px) {
+			width: 100%;
+			margin-right: 0;
+		}
+	}
+	section.telegram-window {
+		width: calc(50% - var(--grid-gutter)/2);
+		@media (max-width: 760px) {
+			display: none;
+		}
 	}
 }

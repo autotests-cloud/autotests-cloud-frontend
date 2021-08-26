@@ -1,11 +1,12 @@
 import { create_UUID } from "./StringUtils.js"; // Утилита для создание уникального UUID
 
 const body = document.querySelector("body.tests-app"); // Выбираем корневой селектор класса tests-app
-const appBlock = document.querySelector("#app"); // Выбираем div#app который оборачивает from#objective, что ниже
+const appBlock = document.querySelector(".start"); // Выбираем div#app который оборачивает from#objective, что ниже
 const mainForm = document.querySelector("#objective"); // Выбираем основную форму form#objective
-const mainBtn = document.querySelector("button.main"); // Основная кнопка сгенерировать
+const mainBtn = document.querySelector(".group button.main"); // Основная кнопка сгенерировать
+const mainBtn2 = document.querySelector(".options-footer-elements button.main"); // Вторая кнопка сгенерировать
 
-const modalBtn = document.querySelector("button.modal"); // Кнопка для small modal для вызова мольного окна
+const modalBtn = document.querySelector(".manual-test-add"); // Кнопка для small modal для вызова мольного окна
 const modalBtnClose = document.querySelector("button.modal-close"); // Кнопка для закрытия модального окна
 const optionsBtn = document.querySelector("button.options"); // Кнопка показать \ скрыть опции
 
@@ -21,11 +22,17 @@ const titleTextarea = document.querySelector("#input-title"); // Главный 
 const consoleContainer = document.querySelector(".console-container"); // Консоль которая выводится при получении данных с бекэнда
 const consoleContainerContent = consoleContainer.querySelector(".content"); // Блок с классом контейнер в консоле
 
-const iframeBlock = document.querySelector(".iframe-block"); // div info iframe-block
-const infoBlock = document.querySelector(".info"); // выбирает тот же самый блок div info iframe-block
-const telegramBlock = document.querySelector(".telegram-block"); // Блок отрисовки телеграма
 
-const telegramTestBtn = document.querySelector(".logo"); // Логотип
+//! Add new
+const mainFormSize = document.querySelector(".start .wrapper .form");
+const informationSection = document.querySelector(".information");
+const informationTrigger = document.querySelector(".information .trigger");
+const mainFormSection = document.querySelector(".main-block__page");
+const mainFormSectionTrigger = document.querySelector(".start .wrapper .options");
+const mainFormSectionTrigger2 = document.querySelector(".start .wrapper .options-footer-elements .options");
+
+//! New end
+
 
 let checkAllGithub = document.getElementById("option1"); //Родительский чекбокс гитхаба
 let checkBoxesGithub = document.querySelectorAll("input.github");
@@ -177,12 +184,10 @@ const initForm = () => {
     // НЕ перезагружаем страницу т.е отменяем стандартное поведение формы
     event.preventDefault();
     // alert(document.getElementById('input-title').value);
-    // Показываем контейнер с консолью || удаляем consoleContainer класс hidden
-    consoleContainer.classList.remove("hidden");
     // Блоку div#app добавляеем невидимости
     appBlock.classList.add("hidden");
-    // div iframe info который справо скрываем  добавляя hidden telegramBlock.classList.remove("hidden");
-    infoBlock.classList.add("hidden");
+	 informationSection.classList.add("hidden");
+	 calcContentHeight ();
 
     // В переменую formData мы присваиваем конструктор FormData(mainForm), который создаёт новый объект FormData т.е
     // HTML-форму на основе mainForm главной формы form#objective.
@@ -214,8 +219,6 @@ const initForm = () => {
       // consoleContainer.classList.remove("hidden");
       // Убираем главную форму
       mainForm.classList.add("hidden"); // Показывыем iframeBlock
-      iframeBlock.classList.remove("hidden"); // И скрываем .info
-      infoBlock.classList.add("hidden"); // telegramBlock.classList.remove("hidden");
 
       mainForm.reset();
     } else {
@@ -231,6 +234,7 @@ const initForm = () => {
   }
 
   mainBtn.addEventListener("click", submitForm);
+  mainBtn2.addEventListener("click", submitForm);
 };
 
 export { initForm };
@@ -239,11 +243,11 @@ initForm();
 
 // Функция открытия модального окна
 function modalOpen() {
-  body.classList.add("modal");
+	body.classList.add("modal");
 }
 // Закрытие модального окна
 function modalClose() {
-  body.classList.remove("modal");
+	body.classList.remove("modal");
 }
 // Функция тогл
 function optionsToggle() {
@@ -441,15 +445,44 @@ function setItemToLocalStorage(id, titleValue, stepsValue) {
   localStorage.setItem(id, JSON.stringify(tests));
 }
 
-// ТЕСТ ТЕЛЕГИ
-function testTelegram() {
-  telegramBlock.innerHTML = `<iframe id="telegram-post-autotests_cloud-17" class="telegram-iframe" src="https://t.me/11111?embed=1&discussion=1&comments_limit=5&light=1"></iframe>`;
-  telegramBlock.classList.remove("hidden");
-  infoBlock.classList.add("hidden");
-}
-
-telegramTestBtn.addEventListener("click", testTelegram);
 
 modalBtn.addEventListener("click", modalOpen);
 modalBtnClose.addEventListener("click", modalClose);
 optionsBtn.addEventListener("click", optionsToggle);
+
+
+//! Add new
+
+// Скрытие-показ инфы
+informationTrigger.addEventListener("click", informationToggle);
+function informationToggle() {
+	informationSection.classList.toggle("active");
+}
+
+// Скрытие-показ опций
+mainFormSectionTrigger.addEventListener("click", mainFormSectionToggle);
+mainFormSectionTrigger.addEventListener("click", calcContentHeight);
+mainFormSectionTrigger2.addEventListener("click", mainFormSectionToggle);
+mainFormSectionTrigger2.addEventListener("click", calcContentHeight);
+function mainFormSectionToggle() {
+	mainFormSection.classList.toggle("cards-active");
+}
+
+// Подсчет размера контента
+window.onload = function setContentHeightFirst() {
+	appBlock.style.height = "calc(" + mainFormSize.offsetHeight + "px + 1.5rem)";
+}
+function calcContentHeight () {
+	let firstBlockSize = document.querySelector(".wrapper.block-first");
+	let secondBlockSize = document.querySelector(".wrapper.block-second");
+	let cardsActiveCheck = document.querySelector(".main-block__page.cards-active");
+	let secondStepCheck = document.querySelector(".start.hidden");
+	if (secondStepCheck !== null) {
+		appBlock.style.height = "calc(" + secondBlockSize.offsetHeight + "px + 2em)";
+	} else if (cardsActiveCheck !== null) {
+		appBlock.style.height = "calc(" + firstBlockSize.offsetHeight + "px + 3em)";
+	} 
+	else {
+		appBlock.style.height = "calc(" + mainFormSize.offsetHeight + "px + 1.5rem)";
+	}
+}
