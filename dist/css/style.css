@@ -674,7 +674,7 @@ a:focus, a:hover, a:active, a:visited {
 
 .heycisco-proj .main-block .form-group {
   display: block;
-  margin-bottom: 0.85em;
+  margin-bottom: 0.5em;
 }
 
 .heycisco-proj .main-block .form-group input {
@@ -742,7 +742,7 @@ a:focus, a:hover, a:active, a:visited {
 }
 
 .heycisco-proj .main-block .form-group .form-group {
-  margin-left: 1.6em;
+  margin-left: 0.6em;
   margin-top: 0.3em;
   margin-bottom: 0;
 }
@@ -757,6 +757,115 @@ a:focus, a:hover, a:active, a:visited {
 .heycisco-proj .main-block .manual-test-add:hover {
   color: var(--color-orange2);
   transition-property: color;
+}
+
+.heycisco-proj .main-block .form_radio {
+  margin-bottom: 0.1em;
+}
+
+.heycisco-proj .main-block .form_radio input[type=radio] {
+  display: none;
+}
+
+.heycisco-proj .main-block .form_radio label {
+  cursor: pointer;
+  position: relative;
+  padding-left: 1.7em;
+  user-select: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.heycisco-proj .main-block .form_radio label:before {
+  content: "";
+  border: 2px solid var(--color-gray);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 0.45em;
+  display: block;
+  position: absolute;
+  vertical-align: middle;
+  margin-right: var(--objects-indents1);
+  top: 0em;
+  left: 0;
+  border-radius: 50%;
+}
+
+.heycisco-proj .main-block .form_radio label:after {
+  content: "";
+  width: 0.6em;
+  height: 0.6em;
+  display: block;
+  position: absolute;
+  vertical-align: middle;
+  margin-right: var(--objects-indents1);
+  top: 0.3em;
+  left: 0.3em;
+  border-radius: 50%;
+  background: #0000;
+  transition-duration: 0.5s;
+  -o-transition-timing-function: ease-out;
+  transition-property: background;
+}
+
+.heycisco-proj .main-block .form_radio input[type=radio]:checked + label:after {
+  background: var(--color-orange);
+  transition-duration: 0.25s;
+  -o-transition-timing-function: ease-in;
+  transition-property: background;
+}
+
+.heycisco-proj .main-block .form_radio label:hover:after {
+  background: var(--color-gray);
+  transition-duration: 0.25s;
+  -o-transition-timing-function: ease-in;
+  transition-property: background;
+}
+
+.heycisco-proj .main-block .form_radio input[type=radio]:disabled + label {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.heycisco-proj .main-block .added-tests ul {
+  margin-top: 0.2em;
+  margin-left: 1.2em;
+}
+
+.heycisco-proj .main-block .added-tests ul li {
+  display: flex;
+  position: relative;
+}
+
+.heycisco-proj .main-block .added-tests ul li:before {
+  content: "•";
+  position: absolute;
+  left: -1.05em;
+  top: -0.25em;
+}
+
+.heycisco-proj .main-block .added-tests ul li label {
+  font-size: 0.8em;
+  position: relative;
+  font-weight: 500;
+  color: var(--color-gray);
+}
+
+.heycisco-proj .main-block .added-tests ul li label:after {
+  position: absolute;
+  content: "EDIT";
+  cursor: pointer;
+  font-size: 80%;
+  display: block;
+  top: 0;
+  right: -100%;
+}
+
+.heycisco-proj .main-block .added-tests ul li input {
+  display: none;
+}
+
+.heycisco-proj .main-block .added-tests ul li textarea {
+  display: none;
 }
 
 .heycisco-proj .main-block .cards {

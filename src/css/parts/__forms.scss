@@ -163,7 +163,7 @@ button.options {
 }
 .form-group {
 	display: block;
-	margin-bottom: 0.85em;
+	margin-bottom: 0.5em;
 
 	input {
 		padding: 0;
@@ -228,7 +228,7 @@ button.options {
 	}
 
 	.form-group {
-		margin-left: 1.6em;
+		margin-left: 0.6em;
 		margin-top: 0.3em;
 		margin-bottom: 0;
 	}
@@ -242,5 +242,105 @@ button.options {
 	&:hover {
 		color: var(--color-orange2);
 		transition-property: color;
+	}
+}
+
+
+
+.form_radio {
+	margin-bottom: 0.1em;
+}
+.form_radio input[type=radio] {
+	display: none;
+}
+.form_radio label {
+	cursor: pointer;
+	position: relative;
+	padding-left: 1.7em;
+	user-select: none;
+	font-size: 0.95rem;
+	font-weight: 500;
+}
+.form_radio label:before {
+	content: "";
+	border: 2px solid var(--color-gray);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+	padding: 0.45em;
+	display: block;
+	position: absolute;
+	vertical-align: middle;
+	margin-right: var(--objects-indents1);
+	top: 0em;
+	left: 0;
+	border-radius: 50%;
+}
+.form_radio label:after {
+	content: "";
+	width: 0.6em;
+	height: 0.6em;
+	display: block;
+	position: absolute;
+	vertical-align: middle;
+	margin-right: var(--objects-indents1);
+	top: 0.3em;
+	left: 0.3em;
+	border-radius: 50%;
+	background: #0000;
+	@include transition-out;
+	transition-property: background;
+}
+ 
+.form_radio input[type=radio]:checked + label:after {
+	background: var(--color-orange);
+	@include transition-in;
+	transition-property: background;
+}
+ 
+.form_radio label:hover:after {
+	background: var(--color-gray);
+	@include transition-in;
+	transition-property: background;
+}
+ 
+.form_radio input[type=radio]:disabled  + label {
+	pointer-events: none;
+	opacity: 0.6;
+}
+
+.added-tests {
+	ul {
+		margin-top: 0.2em;
+		margin-left: 1.2em;
+		li {
+			display: flex;
+			position: relative;
+			&:before {
+				content: "•";
+				position: absolute;
+				left: -1.05em;
+				top: -0.25em;
+			}
+			label {
+				font-size: 0.8em;
+				position: relative;
+				font-weight: 500;
+				color: var(--color-gray);
+				&:after {
+					position: absolute;
+					content: "EDIT";
+					cursor: pointer;
+					font-size: 80%;
+					display: block;
+					top: 0;
+					right: -100%;
+				}
+			}
+			input {
+				display: none;
+			}
+			textarea {
+				display: none;
+			}
+		}
 	}
 }
