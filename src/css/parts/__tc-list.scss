@@ -82,3 +82,7 @@
 		}
 	}
 }
+.task__text, .step__text {
+	margin: 0 1rem;
+	flex-grow: 1;
+  }

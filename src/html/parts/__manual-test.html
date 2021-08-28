@@ -5,7 +5,7 @@
 			<button class="modal-close">@@include('../../icons/times-solid.svg')</button>
 		</div>
 		<div class="content">
-			<form id="modal_form" onsubmit="event.preventDefault()">
+			<form id="modal_form">
 				<div class="input-block">
 					<input type="text" id="tc_title" placeholder="Successful login">
 					<textarea name="test-case" id="text_case" rows="8" placeholder="Open 'https://github.com/login'
@@ -17,7 +17,7 @@ Submit form
 Verify successful authorization as 'Alex'"></textarea>
 				</div>
 				<div class="buttons-block left">
-					<button id="add_test_case">@@include('../../icons/check-solid.svg')Добавить</button>
+					<button id="add_test_case__submit">@@include('../../icons/check-solid.svg')Добавить</button>
 					<button class="small" id="add_new">@@include('../../icons/plus-solid.svg')Добавить ещё один</button>
 				</div>
 			</form>

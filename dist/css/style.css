@@ -852,7 +852,6 @@ a:focus, a:hover, a:active, a:visited {
 
 .heycisco-proj .main-block .added-tests ul li label:after {
   position: absolute;
-  content: "EDIT";
   cursor: pointer;
   font-size: 80%;
   display: block;
@@ -1310,6 +1309,11 @@ a:focus, a:hover, a:active, a:visited {
   transition-duration: 0.25s;
   -o-transition-timing-function: ease-in;
   transition-property: border;
+}
+
+.heycisco-proj .main-block .task__text, .heycisco-proj .main-block .step__text {
+  margin: 0 1rem;
+  flex-grow: 1;
 }
 
 .heycisco-proj .manual-test.modal-body {

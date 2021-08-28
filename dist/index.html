@@ -156,6 +156,36 @@
 
 		<div class="added-tests">
 			<div class="added-tests">
+	<template id="task">
+		<li class="task tasks__task">
+			<label class="title">
+		  <p class="task__text" contenteditable onpaste="OnPaste_StripFormatting(this, event);"></p></label>
+
+		  <div class="step__text" contenteditable onpaste="OnPaste_StripFormatting(this, event);"></div>
+		  <button class="task__delete small" type="button"><img src="img/trash.svg" width="20" height="20"></img>
+			
+		  </button>
+		</li>
+	  </template>
+
+	  <div class="container">
+		<ul class="tasks added-tc"></ul>
+		  <form class="create-task">
+		  <!-- <textarea class="create-task__textarea" placeholder="Successful login"></textarea>
+		  <textarea class="create-steps__textarea" rows="8" placeholder="Open 'https://github.com/login'
+	  
+		  Set username 'Alex'
+		  Set password '12%#5f'
+		  Submit form
+		  
+		  Verify successful authorization as 'Alex'"></textarea> -->
+		  <!-- <button class="main create-task__submit" type="submit" disabled><img src="img/plus.svg" width="20" height="20">
+			Создать
+		  </button> -->
+		</form>
+	  </div>
+		  
+
 	<ul>
 		<li>
 			<label class="title">Lorem, ipsum dolor</label>
@@ -173,8 +203,10 @@
 			<textarea>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, distinctio libero iure perspiciatis velit delectus et! Voluptas, totam! Aspernatur, dolorum</textarea>
 		</li>
 	</ul>
+
 </div>
 
+	
 		</div>
 
 	</div>
@@ -278,6 +310,7 @@
 	</div>
 
 </section>
+			
 		</div>
 		<div class="wrapper block-second">
 			<section class="console cv-code console-container hidden">
@@ -314,7 +347,7 @@
 			<button class="modal-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></button>
 		</div>
 		<div class="content">
-			<form id="modal_form" onsubmit="event.preventDefault()">
+			<form id="modal_form">
 				<div class="input-block">
 					<input type="text" id="tc_title" placeholder="Successful login">
 					<textarea name="test-case" id="text_case" rows="8" placeholder="Open 'https://github.com/login'
@@ -326,7 +359,7 @@ Submit form
 Verify successful authorization as 'Alex'"></textarea>
 				</div>
 				<div class="buttons-block left">
-					<button id="add_test_case"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>Добавить</button>
+					<button id="add_test_case__submit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>Добавить</button>
 					<button class="small" id="add_new"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>Добавить ещё один</button>
 				</div>
 			</form>
@@ -343,6 +376,7 @@ Verify successful authorization as 'Alex'"></textarea>
 			<p>autotests.cloud & qa.guru &copy; 2021</p>
 		</div>
 	</div>
+
 </footer>
 
 <!-- Сетка для контроля вёрстки: -->
@@ -401,9 +435,13 @@ Verify successful authorization as 'Alex'"></textarea>
 	function showGrid(){bodyGrid.classList.toggle("show-grid")}
 </script>
 <div id="grid-btn" onclick="showGrid()">GRID</div>
-
+<script src="./js/LocalStorage.js" type="module"></script>
+<script type="module" src="js/app.js"></script>
+<script src="./js/EditContent.js" type="module"></script>
 <script src="js/parts-activate.js"></script>
-<script type="module" src="js/initForm.js"></script>
+<script type="module" src="js/ui.js"></script>
+<script src="./js/htmlSanitaizer.js"></script>
+
 
 </body>
 </html>

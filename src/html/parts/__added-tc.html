@@ -1,4 +1,34 @@
 <div class="added-tests">
+	<template id="task">
+		<li class="task tasks__task">
+			<label class="title">
+		  <p class="task__text" contenteditable onpaste="OnPaste_StripFormatting(this, event);"></p></label>
+
+		  <div class="step__text" contenteditable onpaste="OnPaste_StripFormatting(this, event);"></div>
+		  <button class="task__delete small" type="button"><img src="img/trash.svg" width="20" height="20"></img>
+			
+		  </button>
+		</li>
+	  </template>
+
+	  <div class="container">
+		<ul class="tasks added-tc"></ul>
+		  <form class="create-task">
+		  <!-- <textarea class="create-task__textarea" placeholder="Successful login"></textarea>
+		  <textarea class="create-steps__textarea" rows="8" placeholder="Open 'https://github.com/login'
+	  
+		  Set username 'Alex'
+		  Set password '12%#5f'
+		  Submit form
+		  
+		  Verify successful authorization as 'Alex'"></textarea> -->
+		  <!-- <button class="main create-task__submit" type="submit" disabled><img src="img/plus.svg" width="20" height="20">
+			Создать
+		  </button> -->
+		</form>
+	  </div>
+		  
+
 	<ul>
 		<li>
 			<label class="title">Lorem, ipsum dolor</label>
@@ -16,4 +46,5 @@
 			<textarea>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, distinctio libero iure perspiciatis velit delectus et! Voluptas, totam! Aspernatur, dolorum</textarea>
 		</li>
 	</ul>
+
 </div>
