@@ -1,4 +1,3 @@
- 
 // Эта функция возвращает массив объектов с добавлеными полями из разобраной строки из localStorage
 function loadingStateFromStorage() {
   let archive = []; // Массив выходных данных

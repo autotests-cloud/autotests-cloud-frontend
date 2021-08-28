@@ -12,6 +12,7 @@ const createTestCaseField = document.querySelector("#tc_title");
 const createStepField = document.querySelector("#text_case");
 const createTestCaseButton = document.querySelector("#add_test_case__submit");
 
+
 tasks.forEach((data) => {
   onCreateTestCase({ data });
 });
@@ -74,3 +75,4 @@ function onCreateTestCase({ data }) {
 
   container.appendChild(clone);
 }
+

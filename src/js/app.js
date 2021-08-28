@@ -1,25 +1,40 @@
-import { appBlock, mainFormSize, body, mainForm, mainBtn, mainBtn2, modalBtn, modalBtnClose, optionsBtn, informationSection,
-  informationToggle, mainFormSectionToggle, calcContentHeight, titleTextarea, consoleContainer, consoleContainerContent, selectingAllNestedCheckboxes, 
-  checkAllGithub,  checkBoxesGithub, checkAllJenkins, checkBoxesJenkins  } from "./ui.js";
+import {
+  appBlock,
+  mainFormSize,
+  body,
+  mainForm,
+  mainBtn,
+  mainBtn2,
+  modalBtn,
+  modalBtnClose,
+  optionsBtn,
+  informationSection,
+  informationToggle,
+  mainFormSectionToggle,
+  calcContentHeight,
+  titleTextarea,
+  consoleContainer,
+  consoleContainerContent,
+  selectingAllNestedCheckboxes,
+  checkAllGithub,
+  checkBoxesGithub,
+  checkAllJenkins,
+  checkBoxesJenkins,
+} from "./ui.js";
+
+import  "./EditContent.js";
+import "./htmlSanitaizer.js";
 
 import { create_UUID } from "./StringUtils.js"; // Утилита для создание уникального UUID
-
-import loadingStateFromStorage  from "./loadingStateFromStorage.js";
-import localStorage from "./LocalStorage.js"
- 
-
+import loadingStateFromStorage from "./loadingStateFromStorage.js";
 
 let stompClient = null; // stompClient создан, но ничего нет в нём
 let uuid = create_UUID(); // Создаем уникальный идентификатор
-let scenarioCount = 0; // Глобальный счётчик scenarioCount от него идёт инкрименты всех сценаривев и элементов списка .added-tc-item + scenarioCount
 
 selectingAllNestedCheckboxes(checkAllGithub, checkBoxesGithub, "github"); // перебор  дерева гитхаба
 selectingAllNestedCheckboxes(checkAllJenkins, checkBoxesJenkins, "jenkins"); // перебор  дерева jenkins
 
-  // Подсчет размера контента
-  window.onload = function setContentHeightFirst() {
-    appBlock.style.height = "calc(" + mainFormSize.offsetHeight + "px + 1.5rem)";
-}
+// Подсчет размера контента
 
 // Функция connect() создаёт экземпляр new SockJS с адресом сокета и подключается к серверу
 // Подключение к серверу и отправака сокетов в spring
@@ -124,9 +139,9 @@ const initForm = () => {
     event.preventDefault();
     // alert(document.getElementById('input-title').value);
     // Блоку div#app добавляеем невидимости
-   appBlock.classList.add("hidden");
-	 informationSection.classList.add("hidden");
-	 calcContentHeight ();
+    appBlock.classList.add("hidden");
+    informationSection.classList.add("hidden");
+    calcContentHeight();
 
     // В переменую formData мы присваиваем конструктор FormData(mainForm), который создаёт новый объект FormData т.е
     // HTML-форму на основе mainForm главной формы form#objective.
@@ -182,18 +197,20 @@ initForm();
 
 // Функция открытия модального окна
 function modalOpen() {
-	body.classList.add("modal");
+  body.classList.add("modal");
 }
 // Закрытие модального окна
 function modalClose() {
-	body.classList.remove("modal");
+  body.classList.remove("modal");
 }
 // Функция тогл
 function optionsToggle() {
   body.classList.toggle("options-open");
 }
 
-
+window.onload = function setContentHeightFirst() {
+  appBlock.style.height = "calc(" + mainFormSize.offsetHeight + "px + 1.5rem)";
+};
 
 modalBtn.addEventListener("click", modalOpen);
 modalBtnClose.addEventListener("click", modalClose);
