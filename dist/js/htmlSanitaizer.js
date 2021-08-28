@@ -1,25 +1,14 @@
-let _onPaste_StripFormatting_IEPaste = true;
-
-function OnPaste_StripFormatting(elem, e) {
-  if (
-    e.originalEvent &&
-    e.originalEvent.clipboardData &&
-    e.originalEvent.clipboardData.getData
-  ) {
-    e.preventDefault();
-    let text = e.originalEvent.clipboardData.getData("text/plain");
-    window.document.execCommand("insertText", false, text);
-  } else if (e.clipboardData && e.clipboardData.getData) {
-    e.preventDefault();
-    let text = e.clipboardData.getData("text/plain");
-    window.document.execCommand("insertText", false, text);
-  } else if (window.clipboardData && window.clipboardData.getData) {
-    // Stop stack overflow
-    if (!_onPaste_StripFormatting_IEPaste) {
-      _onPaste_StripFormatting_IEPaste = true;
-      e.preventDefault();
-      window.document.execCommand("ms-pasteTextOnly", false);
-    }
-    _onPaste_StripFormatting_IEPaste = false;
+export const onPastePlainText = (event) => {
+  let pastedText = undefined;
+  if (window.clipboardData && window.clipboardData.getData) { // IE
+    pastedText = window.clipboardData.getData('Text');
+  } else if (event.clipboardData && e.clipboardData.getData) {
+    pastedText = event.clipboardData.getData('text/plain');
   }
+  event.target.textContent = pastedText;
+  event.preventDefault();
+  return false;
 }
+
+document.querySelector('.task__text').addEventListener('paste', onPastePlainText);
+document.querySelector('.step__text').addEventListener('paste', onPastePlainText);

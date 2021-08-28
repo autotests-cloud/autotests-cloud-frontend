@@ -20,19 +20,20 @@ import {
   checkBoxesGithub,
   checkAllJenkins,
   checkBoxesJenkins,
-} from "./ui.js";
+} from "./ui.js"; // Работа c UI и DOM 
 
-import  "./EditContent.js";
-import "./htmlSanitaizer.js";
+import  "./onCreateTestCaseStorage.js"; // Модуль для редактирования списка в Storage
+ 
 
 import { create_UUID } from "./StringUtils.js"; // Утилита для создание уникального UUID
-import loadingStateFromStorage from "./loadingStateFromStorage.js";
+import dataLoaderFromStorage from "./dataLoaderFromStorage.js"; //Выбираем данные для бекаэнда
 
 let stompClient = null; // stompClient создан, но ничего нет в нём
 let uuid = create_UUID(); // Создаем уникальный идентификатор
 
 selectingAllNestedCheckboxes(checkAllGithub, checkBoxesGithub, "github"); // перебор  дерева гитхаба
 selectingAllNestedCheckboxes(checkAllJenkins, checkBoxesJenkins, "jenkins"); // перебор  дерева jenkins
+
 
 // Подсчет размера контента
 
@@ -159,7 +160,7 @@ const initForm = () => {
       // Если values.url существует
       // values.price = "free";
       // values.email = "admin@qa.guru";
-      values.tests = loadingStateFromStorage(); //В свойство tests объекта values присваиваем результаты работы вызова функции loadingStateFromStorage() которая возвращает массив объектов
+      values.tests = dataLoaderFromStorage(); //В свойство tests объекта values присваиваем результаты работы вызова функции loadingStateFromStorage() которая возвращает массив объектов
       delete values["g-recaptcha-response"]; // Удаляем рекапчу
       // В переменую присваиваем строку JSON из объекта values заменяя on \ off на булиновы значения
       let stringValues = JSON.stringify(values);
@@ -215,3 +216,5 @@ window.onload = function setContentHeightFirst() {
 modalBtn.addEventListener("click", modalOpen);
 modalBtnClose.addEventListener("click", modalClose);
 optionsBtn.addEventListener("click", optionsToggle);
+
+ 

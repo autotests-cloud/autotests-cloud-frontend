@@ -1,4 +1,4 @@
-import LocalStorage from "./LocalStorage.js";
+import LocalStorage from "./localStorage.js";
 
 const storage = new LocalStorage();
 
@@ -76,3 +76,4 @@ function onCreateTestCase({ data }) {
   container.appendChild(clone);
 }
 
+ 

@@ -159,9 +159,9 @@
 	<template id="task">
 		<li class="task tasks__task">
 			<label class="title">
-		  <p class="task__text" contenteditable onpaste="OnPaste_StripFormatting(this, event);"></p></label>
+		  <p class="task__text" id="editor" contenteditable></p></label>
 
-		  <div class="step__text" contenteditable onpaste="OnPaste_StripFormatting(this, event);"></div>
+		  <div class="step__text" id="editor"  contenteditable></div>
 		  <button class="task__delete small" type="button"><img src="img/trash.svg" width="20" height="20"></img>
 			
 		  </button>

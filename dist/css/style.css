@@ -1316,6 +1316,14 @@ a:focus, a:hover, a:active, a:visited {
   flex-grow: 1;
 }
 
+.heycisco-proj .main-block div[contenteditable] {
+  height: 2rem;
+}
+
+.heycisco-proj .main-block p[contenteditable] {
+  height: 1rem;
+}
+
 .heycisco-proj .manual-test.modal-body {
   width: 100vw;
   height: 100vh;

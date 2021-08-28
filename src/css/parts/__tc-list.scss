@@ -86,3 +86,12 @@
 	margin: 0 1rem;
 	flex-grow: 1;
   }
+
+  div[contenteditable] {
+ 
+    height: 2rem;
+  }
+  p[contenteditable] {
+
+    height: 1rem;
+  }

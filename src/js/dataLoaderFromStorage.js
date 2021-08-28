@@ -1,6 +1,6 @@
 // Эта функция возвращает массив объектов с добавлеными полями из разобраной строки из localStorage
-function loadingStateFromStorage() {
-  let archive = []; // Массив выходных данных
+function dataLoaderFromStorage() {
+  let result = []; // Массив выходных данных
   let keys = Object.keys(localStorage); //Возвращаем массив из собственных перечисляемых свойств переданного объекта, в том же порядке, в котором они бы обходились циклом for... in - это быстрее
   let i = 0;
   let key;
@@ -17,13 +17,13 @@ function loadingStateFromStorage() {
         "JSON.parse(localStorage.getItem(key)): " +
           JSON.parse(localStorage.getItem(key))
       );
-      archive.push(JSON.parse(localStorage.getItem(key)));
+      result.push(JSON.parse(localStorage.getItem(key)));
     }
   }
 
-  console.log("archive: " + JSON.stringify(archive));
+  console.log("result: " + JSON.stringify(result));
 
-  return archive;
+  return result;
 }
 
-export default loadingStateFromStorage;
+export default dataLoaderFromStorage;
