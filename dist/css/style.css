@@ -759,15 +759,15 @@ a:focus, a:hover, a:active, a:visited {
   transition-property: color;
 }
 
-.heycisco-proj .main-block .form_radio {
+.heycisco-proj .main-block .form-radio {
   margin-bottom: 0.1em;
 }
 
-.heycisco-proj .main-block .form_radio input[type=radio] {
+.heycisco-proj .main-block .form-radio input[type=radio] {
   display: none;
 }
 
-.heycisco-proj .main-block .form_radio label {
+.heycisco-proj .main-block .form-radio label {
   cursor: pointer;
   position: relative;
   padding-left: 1.7em;
@@ -776,7 +776,7 @@ a:focus, a:hover, a:active, a:visited {
   font-weight: 500;
 }
 
-.heycisco-proj .main-block .form_radio label:before {
+.heycisco-proj .main-block .form-radio label:before {
   content: "";
   border: 2px solid var(--color-gray);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
@@ -790,7 +790,7 @@ a:focus, a:hover, a:active, a:visited {
   border-radius: 50%;
 }
 
-.heycisco-proj .main-block .form_radio label:after {
+.heycisco-proj .main-block .form-radio label:after {
   content: "";
   width: 0.6em;
   height: 0.6em;
@@ -807,21 +807,21 @@ a:focus, a:hover, a:active, a:visited {
   transition-property: background;
 }
 
-.heycisco-proj .main-block .form_radio input[type=radio]:checked + label:after {
+.heycisco-proj .main-block .form-radio input[type=radio]:checked + label:after {
   background: var(--color-orange);
   transition-duration: 0.25s;
   -o-transition-timing-function: ease-in;
   transition-property: background;
 }
 
-.heycisco-proj .main-block .form_radio label:hover:after {
+.heycisco-proj .main-block .form-radio label:hover:after {
   background: var(--color-gray);
   transition-duration: 0.25s;
   -o-transition-timing-function: ease-in;
   transition-property: background;
 }
 
-.heycisco-proj .main-block .form_radio input[type=radio]:disabled + label {
+.heycisco-proj .main-block .form-radio input[type=radio]:disabled + label {
   pointer-events: none;
   opacity: 0.6;
 }
