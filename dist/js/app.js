@@ -152,24 +152,22 @@ const initForm = () => {
     // метод FormData.entries() который в свою очередь возвращает [Symbol.iterator], позволяющему пройтись по всем ключам/значениям в этом объекте.
     // Ключ каждой пары - это объект USVString, значение - это USVString или Blob.
     let values = Object.fromEntries(formData.entries());
-
     console.log(values);
+    console.log(JSON.stringify(values).replaceAll('"on"', true).replaceAll('"off"', false));
     console.log(values instanceof Object);
 
     if (values.url) {
       // Если values.url существует
       // values.price = "free";
       // values.email = "admin@qa.guru";
-      values.tests = dataLoaderFromStorage(); //В свойство tests объекта values присваиваем результаты работы вызова функции loadingStateFromStorage() которая возвращает массив объектов
+      values.tests = dataLoaderFromStorage(); //В свойство tests объекта values присваиваем результаты работы вызова функции dataLoaderFromStorage() которая возвращает массив объектов
       delete values["g-recaptcha-response"]; // Удаляем рекапчу
       // В переменую присваиваем строку JSON из объекта values заменяя on \ off на булиновы значения
-      let stringValues = JSON.stringify(values);
-      // .replaceAll('"on"', true)
-      // .replaceAll('"off"', false);
-      console.log("данные с заменой " + stringValues);
+      let valuesWithBoolean = JSON.stringify(values).replaceAll('"on"', true).replaceAll('"off"', false);
+      console.log("данные с заменой " + valuesWithBoolean);
 
       // Передаем
-      stompClient.send(`/app/orders/${uuid}`, {}, stringValues);
+      stompClient.send(`/app/orders/${uuid}`, {}, valuesWithBoolean);
 
       // consoleContainer.classList.remove("hidden");
       // Убираем главную форму
