@@ -129,8 +129,11 @@ function displayNotification(messagePath) {
   telegramBlock.classList.remove("hidden");
 }
 
-//Функция initForm инициализирует форму отправки тестов
+function replaceValuesToBoolean(params) {
+ return JSON.stringify(params).replaceAll('"on"', true).replaceAll('"off"', false);
+}
 
+//Функция initForm инициализирует форму отправки тестов
 const initForm = () => {
   connect(); // Вызываем подключение сокетов
 
@@ -152,8 +155,8 @@ const initForm = () => {
     // метод FormData.entries() который в свою очередь возвращает [Symbol.iterator], позволяющему пройтись по всем ключам/значениям в этом объекте.
     // Ключ каждой пары - это объект USVString, значение - это USVString или Blob.
     let values = Object.fromEntries(formData.entries());
-    console.log(values);
-    console.log(JSON.stringify(values).replaceAll('"on"', true).replaceAll('"off"', false));
+    console.warn("Объектное значенеие", values);
+    console.warn("Объектное значенеие с автозаменой функция",  replaceValuesToBoolean(values));
     console.log(values instanceof Object);
 
     if (values.url) {
@@ -163,11 +166,10 @@ const initForm = () => {
       values.tests = dataLoaderFromStorage(); //В свойство tests объекта values присваиваем результаты работы вызова функции dataLoaderFromStorage() которая возвращает массив объектов
       delete values["g-recaptcha-response"]; // Удаляем рекапчу
       // В переменую присваиваем строку JSON из объекта values заменяя on \ off на булиновы значения
-      let valuesWithBoolean = JSON.stringify(values).replaceAll('"on"', true).replaceAll('"off"', false);
-      console.log("данные с заменой " + valuesWithBoolean);
-
+     
+      console.log("данные с заменой " + replaceValuesToBoolean(values));
       // Передаем
-      stompClient.send(`/app/orders/${uuid}`, {}, valuesWithBoolean);
+      stompClient.send(`/app/orders/${uuid}`, {}, replaceValuesToBoolean(values));
 
       // consoleContainer.classList.remove("hidden");
       // Убираем главную форму
