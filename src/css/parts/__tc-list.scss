@@ -1,97 +1,93 @@
-#tc-list {
-	display: flex;
-	flex-direction: column;
-	max-width: 680px;
-	margin: 1em auto 3em;
-	position: relative;
-	>li {
-		width: 100%;
-		display: flex;
-		align-items: stretch;
-		justify-content: space-between;
-		margin-bottom: 0.25em;
-		padding-bottom: 0.25em;
-		border-bottom: 1px dotted var(--color-orange);
-		>* {
-			margin-right: 0.25em;
-			padding: 0.15em;
-			color: var(--color-gray);
-			font-size: 0.9rem;
+.added-tests {
+	ul {
+		margin-top: 0.2em;
+		margin-left: 1.2em;
+		li {
+			display: flex;
+			position: relative;
 			flex-direction: row;
-			align-items: center;
-			justify-content: flex-start;
-		}
-		label {
-			flex: 0 0 30%;
-			font-weight: 500;
-			color: var(--color-text);
-			display: flex;
-			font-size: 1em;
-		}
-		input {
-			display: flex;
-			border: 1px solid #0000;
-			@include transition-out;
-			border-radius: var(--radius2);
-			transition-property: border;
-		}
-		textarea {
-			display: flex;
-			flex: 1 1 auto;
-			border: 1px solid #0000;
-			@include transition-out;
-			border-radius: var(--radius2);
-			transition-property: border
-		}
-		button {
-			display: flex;
-			justify-content: center;
-			flex: 0 0 auto;
-			width: 3em;
-			img {
-				width: 1.2em;
-				opacity: 0.6;
-				@include transition-out;
-				transition-property: opacity
+			justify-content: space-between;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			&:before {
+				content: "•";
+				position: absolute;
+				left: -1.05em;
+				top: -0.25em;
 			}
-			&:hover {
-				img {
-					opacity: 1;
-					@include transition-in;
-					transition-property: opacity;
+		}
+		.tasks__task {
+			.task__text,
+			.step__text,
+			.title {
+				color: var(--color-gray);
+				flex: 0 1 calc(100% - 4rem);
+				font-size: 0.95rem;
+				text-align: left;
+				position: relative;
+				border: 1px solid #fff0;
+				border-radius: 2px;
+				font-weight: 500;
+				cursor: default;
+				pointer-events: none;
+			}
+			.step__text {
+				margin-top: -1.5em;
+				opacity: 0;
+				font-weight: 300;
+				display: none;
+			}
+			.task__btn {
+				position: absolute;
+				right: 0;
+				top: 0rem;
+				button {
+					color: var(--color-orange);
+					font-size: 0.85rem;
+				}
+				.btn-delete {
+					display: none;
+				}
+				.btn-save {
+					display: none;
 				}
 			}
-			.edit {
+			&.active {
+				.task__text,
+				.step__text,
+				.title {
+					pointer-events: auto;
+					cursor: text;
+				}
 
+				.title {
+					border: 1px solid var(--color-borders);
+				}
+				.step__text {
+					border: 1px solid var(--color-borders);
+					margin-top: 0.25em;
+					opacity: 1;
+					display: block;
+				}
+				.task__btn {
+					.btn-delete {
+						display: inline-block;
+					}
+					.btn-save {
+						display: inline-block;
+					}
+					.btn-edit {
+						display: none;
+					}
+				}
 			}
-			.delete {
-
-			}
-		}
-		&.editMode {
-			input {
-				border: 1px solid var(--color-borders);
-				@include transition-in;
-				transition-property: border
-			}
-			textarea {
-				border: 1px solid var(--color-borders);
-				@include transition-in;
-				transition-property: border
-			}	
 		}
 	}
+
+	// div[contenteditable] {
+	// 	height: 2rem;
+	// }
+	// p[contenteditable] {
+	// 	height: 1rem;
+	// }
 }
-.task__text, .step__text {
-	margin: 0 1rem;
-	flex-grow: 1;
-  }
-
-  div[contenteditable] {
- 
-    height: 2rem;
-  }
-  p[contenteditable] {
-
-    height: 1rem;
-  }

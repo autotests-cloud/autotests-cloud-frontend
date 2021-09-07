@@ -18,7 +18,8 @@ button {
 		}
 	}
 }
-input#input-title, button.main {
+input#input-title,
+button.main {
 	border-radius: var(--radius1);
 	padding: 0 1.5em;
 	font-size: 1.4rem;
@@ -36,10 +37,9 @@ input#input-title, button.main {
 		width: 100%;
 		height: unset;
 	}
-	>*:first-child {
+	> *:first-child {
 		margin-right: var(--grid-gutter);
 	}
-
 }
 input#input-title {
 	font-weight: 400;
@@ -58,9 +58,9 @@ input#input-title {
 		@include transition-in;
 		transition-property: border;
 	}
-	
+
 	@media (max-width: 760px) {
-		padding: 0.4em	0.7em;
+		padding: 0.4em 0.7em;
 		margin-right: 0;
 	}
 }
@@ -79,7 +79,7 @@ button.main {
 	}
 	@media (max-width: 760px) {
 		margin-top: 1em;
-		padding: 0.5em	0.7em;
+		padding: 0.5em 0.7em;
 	}
 }
 .options-footer-elements {
@@ -153,8 +153,6 @@ button.options {
 	}
 }
 
-
-
 .checkboxes {
 	flex-wrap: wrap;
 	align-items: flex-start;
@@ -183,9 +181,10 @@ button.options {
 	}
 
 	label:before {
-		content: '';
+		content: "";
 		border: 2px solid var(--color-gray);
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+			inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
 		padding: 0.5em;
 		display: inline-block;
 		position: relative;
@@ -196,8 +195,8 @@ button.options {
 		top: -0.1em;
 	}
 
-	input+label:after {
-		content: '';
+	input + label:after {
+		content: "";
 		display: block;
 		position: absolute;
 		top: 0.1em;
@@ -212,7 +211,7 @@ button.options {
 		transition-property: border-color;
 	}
 
-	input:checked+label:after {
+	input:checked + label:after {
 		border-color: var(--color-orange);
 		@include transition-in;
 		transition-property: border-color;
@@ -245,12 +244,10 @@ button.options {
 	}
 }
 
-
-
 .form-radio {
 	margin-bottom: 0.1em;
 
-	input[type=radio] {
+	input[type="radio"] {
 		display: none;
 	}
 	label {
@@ -264,7 +261,8 @@ button.options {
 	label:before {
 		content: "";
 		border: 2px solid var(--color-gray);
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+			inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
 		padding: 0.45em;
 		display: block;
 		position: absolute;
@@ -289,58 +287,21 @@ button.options {
 		@include transition-out;
 		transition-property: background;
 	}
-	
-	input[type=radio]:checked + label:after {
+
+	input[type="radio"]:checked + label:after {
 		background: var(--color-orange);
 		@include transition-in;
 		transition-property: background;
 	}
-	
+
 	label:hover:after {
 		background: var(--color-gray);
 		@include transition-in;
 		transition-property: background;
 	}
-	
-	input[type=radio]:disabled  + label {
+
+	input[type="radio"]:disabled + label {
 		pointer-events: none;
 		opacity: 0.6;
-	}
-}
-
-.added-tests {
-	ul {
-		margin-top: 0.2em;
-		margin-left: 1.2em;
-		li {
-			display: flex;
-			position: relative;
-			&:before {
-				content: "•";
-				position: absolute;
-				left: -1.05em;
-				top: -0.25em;
-			}
-			label {
-				font-size: 0.8em;
-				position: relative;
-				font-weight: 500;
-				color: var(--color-gray);
-				&:after {
-					position: absolute;
-					cursor: pointer;
-					font-size: 80%;
-					display: block;
-					top: 0;
-					right: -100%;
-				}
-			}
-			input {
-				display: none;
-			}
-			textarea {
-				display: none;
-			}
-		}
 	}
 }

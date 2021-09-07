@@ -510,7 +510,8 @@ a:focus, a:hover, a:active, a:visited {
   -o-transition-timing-function: ease-in;
 }
 
-.heycisco-proj .main-block input#input-title, .heycisco-proj .main-block button.main {
+.heycisco-proj .main-block input#input-title,
+.heycisco-proj .main-block button.main {
   border-radius: var(--radius1);
   padding: 0 1.5em;
   font-size: 1.4rem;
@@ -563,7 +564,7 @@ a:focus, a:hover, a:active, a:visited {
 
 @media (max-width: 760px) {
   .heycisco-proj .main-block input#input-title {
-    padding: 0.4em	0.7em;
+    padding: 0.4em 0.7em;
     margin-right: 0;
   }
 }
@@ -588,7 +589,7 @@ a:focus, a:hover, a:active, a:visited {
 @media (max-width: 760px) {
   .heycisco-proj .main-block button.main {
     margin-top: 1em;
-    padding: 0.5em	0.7em;
+    padding: 0.5em 0.7em;
   }
 }
 
@@ -695,7 +696,7 @@ a:focus, a:hover, a:active, a:visited {
 }
 
 .heycisco-proj .main-block .form-group label:before {
-  content: '';
+  content: "";
   border: 2px solid var(--color-gray);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
   padding: 0.5em;
@@ -709,7 +710,7 @@ a:focus, a:hover, a:active, a:visited {
 }
 
 .heycisco-proj .main-block .form-group input + label:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0.1em;
@@ -763,7 +764,7 @@ a:focus, a:hover, a:active, a:visited {
   margin-bottom: 0.1em;
 }
 
-.heycisco-proj .main-block .form-radio input[type=radio] {
+.heycisco-proj .main-block .form-radio input[type="radio"] {
   display: none;
 }
 
@@ -807,7 +808,7 @@ a:focus, a:hover, a:active, a:visited {
   transition-property: background;
 }
 
-.heycisco-proj .main-block .form-radio input[type=radio]:checked + label:after {
+.heycisco-proj .main-block .form-radio input[type="radio"]:checked + label:after {
   background: var(--color-orange);
   transition-duration: 0.25s;
   -o-transition-timing-function: ease-in;
@@ -821,50 +822,9 @@ a:focus, a:hover, a:active, a:visited {
   transition-property: background;
 }
 
-.heycisco-proj .main-block .form-radio input[type=radio]:disabled + label {
+.heycisco-proj .main-block .form-radio input[type="radio"]:disabled + label {
   pointer-events: none;
   opacity: 0.6;
-}
-
-.heycisco-proj .main-block .added-tests ul {
-  margin-top: 0.2em;
-  margin-left: 1.2em;
-}
-
-.heycisco-proj .main-block .added-tests ul li {
-  display: flex;
-  position: relative;
-}
-
-.heycisco-proj .main-block .added-tests ul li:before {
-  content: "•";
-  position: absolute;
-  left: -1.05em;
-  top: -0.25em;
-}
-
-.heycisco-proj .main-block .added-tests ul li label {
-  font-size: 0.8em;
-  position: relative;
-  font-weight: 500;
-  color: var(--color-gray);
-}
-
-.heycisco-proj .main-block .added-tests ul li label:after {
-  position: absolute;
-  cursor: pointer;
-  font-size: 80%;
-  display: block;
-  top: 0;
-  right: -100%;
-}
-
-.heycisco-proj .main-block .added-tests ul li input {
-  display: none;
-}
-
-.heycisco-proj .main-block .added-tests ul li textarea {
-  display: none;
 }
 
 .heycisco-proj .main-block .cards {
@@ -892,7 +852,7 @@ a:focus, a:hover, a:active, a:visited {
 
 .heycisco-proj .main-block .cards .card {
   background: var(--color-white);
-  width: calc(50% - var(--cards--indent)/2);
+  width: calc(50% - var(--cards--indent) / 2);
   box-shadow: var(--box-shadow);
   border-radius: var(--radius1);
   overflow: hidden;
@@ -929,7 +889,7 @@ a:focus, a:hover, a:active, a:visited {
 }
 
 .heycisco-proj .main-block .cards .card__header img {
-  margin-right: calc(var(--objects-indents1)/4);
+  margin-right: calc(var(--objects-indents1) / 4);
 }
 
 .heycisco-proj .main-block .cards .card__body-left {
@@ -1220,108 +1180,96 @@ a:focus, a:hover, a:active, a:visited {
   max-width: 100%;
 }
 
-.heycisco-proj .main-block #tc-list {
+.heycisco-proj .main-block .added-tests ul {
+  margin-top: 0.2em;
+  margin-left: 1.2em;
+}
+
+.heycisco-proj .main-block .added-tests ul li {
   display: flex;
-  flex-direction: column;
-  max-width: 680px;
-  margin: 1em auto 3em;
   position: relative;
-}
-
-.heycisco-proj .main-block #tc-list > li {
-  width: 100%;
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  margin-bottom: 0.25em;
-  padding-bottom: 0.25em;
-  border-bottom: 1px dotted var(--color-orange);
-}
-
-.heycisco-proj .main-block #tc-list > li > * {
-  margin-right: 0.25em;
-  padding: 0.15em;
-  color: var(--color-gray);
-  font-size: 0.9rem;
   flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-.heycisco-proj .main-block #tc-list > li label {
-  flex: 0 0 30%;
+.heycisco-proj .main-block .added-tests ul li:before {
+  content: "•";
+  position: absolute;
+  left: -1.05em;
+  top: -0.25em;
+}
+
+.heycisco-proj .main-block .added-tests ul .tasks__task .task__text,
+.heycisco-proj .main-block .added-tests ul .tasks__task .step__text,
+.heycisco-proj .main-block .added-tests ul .tasks__task .title {
+  color: var(--color-gray);
+  flex: 0 1 calc(100% - 4rem);
+  font-size: 0.95rem;
+  text-align: left;
+  position: relative;
+  border: 1px solid #fff0;
+  border-radius: 2px;
   font-weight: 500;
-  color: var(--color-text);
-  display: flex;
-  font-size: 1em;
+  cursor: default;
+  pointer-events: none;
 }
 
-.heycisco-proj .main-block #tc-list > li input {
-  display: flex;
-  border: 1px solid #0000;
-  transition-duration: 0.5s;
-  -o-transition-timing-function: ease-out;
-  border-radius: var(--radius2);
-  transition-property: border;
+.heycisco-proj .main-block .added-tests ul .tasks__task .step__text {
+  margin-top: -1.5em;
+  opacity: 0;
+  font-weight: 300;
+  display: none;
 }
 
-.heycisco-proj .main-block #tc-list > li textarea {
-  display: flex;
-  flex: 1 1 auto;
-  border: 1px solid #0000;
-  transition-duration: 0.5s;
-  -o-transition-timing-function: ease-out;
-  border-radius: var(--radius2);
-  transition-property: border;
+.heycisco-proj .main-block .added-tests ul .tasks__task .task__btn {
+  position: absolute;
+  right: 0;
+  top: 0rem;
 }
 
-.heycisco-proj .main-block #tc-list > li button {
-  display: flex;
-  justify-content: center;
-  flex: 0 0 auto;
-  width: 3em;
+.heycisco-proj .main-block .added-tests ul .tasks__task .task__btn button {
+  color: var(--color-orange);
+  font-size: 0.85rem;
 }
 
-.heycisco-proj .main-block #tc-list > li button img {
-  width: 1.2em;
-  opacity: 0.6;
-  transition-duration: 0.5s;
-  -o-transition-timing-function: ease-out;
-  transition-property: opacity;
+.heycisco-proj .main-block .added-tests ul .tasks__task .task__btn .btn-delete {
+  display: none;
 }
 
-.heycisco-proj .main-block #tc-list > li button:hover img {
+.heycisco-proj .main-block .added-tests ul .tasks__task .task__btn .btn-save {
+  display: none;
+}
+
+.heycisco-proj .main-block .added-tests ul .tasks__task.active .task__text,
+.heycisco-proj .main-block .added-tests ul .tasks__task.active .step__text,
+.heycisco-proj .main-block .added-tests ul .tasks__task.active .title {
+  pointer-events: auto;
+  cursor: text;
+}
+
+.heycisco-proj .main-block .added-tests ul .tasks__task.active .title {
+  border: 1px solid var(--color-borders);
+}
+
+.heycisco-proj .main-block .added-tests ul .tasks__task.active .step__text {
+  border: 1px solid var(--color-borders);
+  margin-top: 0.25em;
   opacity: 1;
-  transition-duration: 0.25s;
-  -o-transition-timing-function: ease-in;
-  transition-property: opacity;
+  display: block;
 }
 
-.heycisco-proj .main-block #tc-list > li.editMode input {
-  border: 1px solid var(--color-borders);
-  transition-duration: 0.25s;
-  -o-transition-timing-function: ease-in;
-  transition-property: border;
+.heycisco-proj .main-block .added-tests ul .tasks__task.active .task__btn .btn-delete {
+  display: inline-block;
 }
 
-.heycisco-proj .main-block #tc-list > li.editMode textarea {
-  border: 1px solid var(--color-borders);
-  transition-duration: 0.25s;
-  -o-transition-timing-function: ease-in;
-  transition-property: border;
+.heycisco-proj .main-block .added-tests ul .tasks__task.active .task__btn .btn-save {
+  display: inline-block;
 }
 
-.heycisco-proj .main-block .task__text, .heycisco-proj .main-block .step__text {
-  margin: 0 1rem;
-  flex-grow: 1;
-}
-
-.heycisco-proj .main-block div[contenteditable] {
-  height: 2rem;
-}
-
-.heycisco-proj .main-block p[contenteditable] {
-  height: 1rem;
+.heycisco-proj .main-block .added-tests ul .tasks__task.active .task__btn .btn-edit {
+  display: none;
 }
 
 .heycisco-proj .manual-test.modal-body {

@@ -6,9 +6,11 @@
 		  <p class="task__text" id="editor" contenteditable></p></label>
 
 		  <div class="step__text" id="editor"  contenteditable></div>
-		  <button class="task__delete small" type="button"><img src="img/trash.svg" width="20" height="20"></img>
-			
-		  </button>
+		  <div class="task__btn">
+			<button class="btn-edit" type="button" title="Изменить">@@include('../../icons/pen-solid.svg')</button>
+			<button class="btn-delete" type="button" title="Удалить">@@include('../../icons/trash-solid.svg')</button>
+			<button class="btn-save" type="button" title="Сохранить">@@include('../../icons/check-solid.svg')</button>
+		</div>
 		</li>
 	  </template>
 
@@ -28,24 +30,4 @@
 		  </button> -->
 		<!-- </form> -->
 	  </div>
-		  
-
-	<ul>
-		<li>
-			<label class="title">Lorem, ipsum dolor</label>
-			<input type="text">
-			<textarea>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, distinctio libero iure perspiciatis velit delectus et! Voluptas, totam! Aspernatur, dolorum</textarea>
-		</li>
-		<li>
-			<label class="title">Lorem, ipsum dolor</label>
-			<input type="text">
-			<textarea>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, distinctio libero iure perspiciatis velit delectus et! Voluptas, totam! Aspernatur, dolorum</textarea>
-		</li>
-		<li>
-			<label class="title">Lorem, ipsum dolor</label>
-			<input type="text">
-			<textarea>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, distinctio libero iure perspiciatis velit delectus et! Voluptas, totam! Aspernatur, dolorum</textarea>
-		</li>
-	</ul>
-
 </div>
