@@ -305,3 +305,37 @@ button.options {
 		opacity: 0.6;
 	}
 }
+.input-group {
+	display: flex;
+	margin: 1em 0;
+	justify-content: flex-start;
+	align-items: stretch;
+	input {
+		font-weight: 400;
+		background: var(--color-background);
+		padding: 0 0.4em;
+		flex: 0 0 auto;
+		color: var(--color-text);
+		border: 2px solid var(--color-background);
+		@include transition-out;
+		transition-property: border;
+		border-radius: var(--radius2) 0 0 var(--radius2);
+		&:focus {
+			border: 2px solid var(--color-borders);
+			@include transition-in;
+			transition-property: border;
+		}
+	}
+	button {
+		background: var(--color-orange);
+		color: var(--color-white);
+		padding: 0 0.4em;
+		flex: 0 0 auto;
+		transition-property: background;
+		border-radius: 0 var(--radius2) var(--radius2) 0;
+		&:hover {
+			background: var(--color-orange2);
+			transition-property: background;
+		}
+	}
+}

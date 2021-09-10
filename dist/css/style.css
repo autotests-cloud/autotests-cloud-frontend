@@ -91,14 +91,14 @@ a:focus, a:hover, a:active, a:visited {
   --section-padding: var(--grid-gutter);
   --content-width: var(--page-width);
   --color-black: #000000;
-  --color-text: #3E4462;
-  --color-orange: #CD5920;
-  --color-orange2: #B74615;
-  --color-gray: #727F8C;
-  --color-placeholder: #B4BDBF;
-  --color-borders: #D5DDE2;
-  --color-background: #EFF2F6;
-  --color-white: #FFFFFF;
+  --color-text: #3e4462;
+  --color-orange: #cd5920;
+  --color-orange2: #b74615;
+  --color-gray: #727f8c;
+  --color-placeholder: #b4bdbf;
+  --color-borders: #d5dde2;
+  --color-background: #eff2f6;
+  --color-white: #ffffff;
   --borders-cards: 1px solid var(--color-borders);
   --box-shadow: 0 3px 10px #00000030;
   --box-shadow-modal: 0 0 200px #00000060;
@@ -827,6 +827,47 @@ a:focus, a:hover, a:active, a:visited {
   opacity: 0.6;
 }
 
+.heycisco-proj .main-block .input-group {
+  display: flex;
+  margin: 1em 0;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.heycisco-proj .main-block .input-group input {
+  font-weight: 400;
+  background: var(--color-background);
+  padding: 0 0.4em;
+  flex: 0 0 auto;
+  color: var(--color-text);
+  border: 2px solid var(--color-background);
+  transition-duration: 0.5s;
+  -o-transition-timing-function: ease-out;
+  transition-property: border;
+  border-radius: var(--radius2) 0 0 var(--radius2);
+}
+
+.heycisco-proj .main-block .input-group input:focus {
+  border: 2px solid var(--color-borders);
+  transition-duration: 0.25s;
+  -o-transition-timing-function: ease-in;
+  transition-property: border;
+}
+
+.heycisco-proj .main-block .input-group button {
+  background: var(--color-orange);
+  color: var(--color-white);
+  padding: 0 0.4em;
+  flex: 0 0 auto;
+  transition-property: background;
+  border-radius: 0 var(--radius2) var(--radius2) 0;
+}
+
+.heycisco-proj .main-block .input-group button:hover {
+  background: var(--color-orange2);
+  transition-property: background;
+}
+
 .heycisco-proj .main-block .cards {
   margin-top: 3em;
   opacity: 0;
@@ -894,6 +935,7 @@ a:focus, a:hover, a:active, a:visited {
 
 .heycisco-proj .main-block .cards .card__body-left {
   margin: 0 var(--objects-indents1);
+  margin-right: calc(var(--objects-indents1) * 2);
   flex: 1 1 60%;
 }
 
