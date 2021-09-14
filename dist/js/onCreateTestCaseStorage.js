@@ -11,6 +11,8 @@ const createTestCaseForm = document.querySelector("#modal_form");
 const createTestCaseField = document.querySelector("#tc_title");
 const createStepField = document.querySelector("#text_case");
 const createTestCaseButton = document.querySelector("#add_test_case__submit");
+ 
+
 
 tasks.forEach((data) => {
 	onCreateTestCase({ data });
@@ -23,6 +25,7 @@ createTestCaseField.addEventListener("input", () => {
 createStepField.addEventListener("input", () => {
 	createTestCaseButton.disabled = !createStepField.value;
 });
+
 
 createTestCaseForm.addEventListener("submit", (event) => {
 	event.preventDefault();
@@ -45,20 +48,51 @@ createTestCaseForm.addEventListener("submit", (event) => {
 	}
 });
 
+let tcEditBtn = document.querySelectorAll(".btn-edit");
+tcEditBtn.forEach(btn=> {
+  btn.addEventListener("click", taskActive);
+
+})
+
+let tcSaveBtn = document.querySelectorAll(".btn-save");
+tcSaveBtn.forEach(btn => {
+  btn.addEventListener("click", taskSave);
+
+})
+
+let taskEditing = document.querySelectorAll(".tasks__task");
+
+function taskActive() {
+  taskEditing.forEach(taskEditItem=> {
+    taskEditItem.classList.add("active");
+  })
+
+
+}
+function taskSave() {
+  taskEditing.forEach(taskEditItem=> {
+    taskEditItem.classList.remove("active");
+  })
+
+ }
+
 // Кнопки добавленных тест-кейсов
 function tcValueEdit() {
-	let tcEditBtn = document.querySelector(".btn-edit");
-	let tcSaveBtn = document.querySelector(".btn-save");
-	let taskEditing = document.querySelector(".tasks__task");
+	let tcEditBtn = document.querySelectorAll(".btn-edit");
+	let tcSaveBtn = document.querySelectorAll(".btn-save");
+	let taskEditing = document.querySelectorAll(".tasks__task");
 	tcEditBtn.addEventListener("click", taskActive);
 	tcSaveBtn.addEventListener("click", taskSave);
-	function taskActive() {
-		taskEditing.classList.add("active");
-	}
+
+  function taskActive() {
+    taskEditing.classList.add("active");
+  }
+  
 	function taskSave() {
 		taskEditing.classList.remove("active");
-	}
+ 	}
 }
+
 
 function onCreateTestCase({ data }) {
 	const clone = template.content.cloneNode(true);
@@ -90,4 +124,3 @@ function onCreateTestCase({ data }) {
 	container.appendChild(clone);
 }
 
-tcValueEdit();
