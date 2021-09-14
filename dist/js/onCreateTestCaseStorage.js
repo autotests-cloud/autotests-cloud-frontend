@@ -47,51 +47,84 @@ createTestCaseForm.addEventListener("submit", (event) => {
 		createTestCaseForm.reset();
 	}
 });
+// Моя хромая реализация.
 
-let tcEditBtn = document.querySelectorAll(".btn-edit");
-tcEditBtn.forEach(btn=> {
-  btn.addEventListener("click", taskActive);
+// let tcEditBtn = document.querySelectorAll(".btn-edit");
+// tcEditBtn.forEach(btn=> {
+//   btn.addEventListener("click", taskActive);
+ 
 
-})
+// });
 
-let tcSaveBtn = document.querySelectorAll(".btn-save");
-tcSaveBtn.forEach(btn => {
-  btn.addEventListener("click", taskSave);
+// let tcSaveBtn = document.querySelectorAll(".btn-save");
+// tcSaveBtn.forEach(btn => {
+//   btn.addEventListener("click", taskSave);
 
-})
+// });
 
-let taskEditing = document.querySelectorAll(".tasks__task");
+// let taskEditing = document.querySelectorAll(".tasks__task");
 
-function taskActive() {
-  taskEditing.forEach(taskEditItem=> {
-    taskEditItem.classList.add("active");
-  })
+// function taskActive() {
+//   taskEditing.forEach(taskEditItem=> {
+//     taskEditItem.classList.add("active");
+//   })
 
 
-}
-function taskSave() {
-  taskEditing.forEach(taskEditItem=> {
-    taskEditItem.classList.remove("active");
-  })
+// }
+// function taskSave() {
+//   taskEditing.forEach(taskEditItem=> {
+//     taskEditItem.classList.remove("active");
+//   })
 
- }
+//  }
 
-// Кнопки добавленных тест-кейсов
-function tcValueEdit() {
-	let tcEditBtn = document.querySelectorAll(".btn-edit");
-	let tcSaveBtn = document.querySelectorAll(".btn-save");
-	let taskEditing = document.querySelectorAll(".tasks__task");
-	tcEditBtn.addEventListener("click", taskActive);
-	tcSaveBtn.addEventListener("click", taskSave);
 
-  function taskActive() {
-    taskEditing.classList.add("active");
-  }
+ let edit = document.querySelectorAll('.btn-edit');
+
+
+ let save = document.querySelectorAll(".btn-save");
+
+ edit.forEach(btn=> {
+  btn.addEventListener("click", toggleParentActive);
+ 
+});
+
+save.forEach(btn => {
+  btn.addEventListener("click", toggleParentActive);
+
+});
+
+function toggleParentActive(event) {
+  let container = event.target.parentNode.parentNode.parentNode.parentNode; //родитель родитель родителя родителя
+  console.log(container);
+  let classList = container.classList;
   
-	function taskSave() {
-		taskEditing.classList.remove("active");
- 	}
+ (Array.from(classList).indexOf('active') === -1)
+  ? classList.add('active') 
+  : classList.remove('active');
 }
+
+
+
+
+
+
+// Кнопки добавленных тест-кейсов 
+// function tcValueEdit() {
+// 	let tcEditBtn = document.querySelectorAll(".btn-edit");
+// 	let tcSaveBtn = document.querySelectorAll(".btn-save");
+// 	let taskEditing = document.querySelectorAll(".tasks__task"); // + добавляет active
+// 	tcEditBtn.addEventListener("click", taskActive);
+// 	tcSaveBtn.addEventListener("click", taskSave);
+
+//   function taskActive() {
+//     taskEditing.classList.add("active");
+//   }
+  
+// 	function taskSave() {
+// 		taskEditing.classList.remove("active");
+//  	}
+// }
 
 
 function onCreateTestCase({ data }) {
