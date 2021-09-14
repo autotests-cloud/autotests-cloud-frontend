@@ -1,8 +1,10 @@
 .cards {
+	margin: 0 auto;
 	margin-top: 3em;
 	opacity: 0;
 	pointer-events: none;
 	// transform: scale3d(0, 0, 1) translateY(-30%);
+	max-width: 800px;
 	transform-origin: 50% 0;
 	@include transition-out;
 	transition-property: opacity;
@@ -17,14 +19,15 @@
 	}
 	.card {
 		background: var(--color-white);
-		width: calc(50% - var(--cards--indent) / 2);
+		// width: calc(50% - var(--cards--indent) / 2);
+		width: 100%;
 		box-shadow: var(--box-shadow);
 		border-radius: var(--radius1);
 		overflow: hidden;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		margin-right: var(--cards--indent);
+		// margin-right: var(--cards--indent);
 		margin-bottom: var(--cards--indent);
 		@media (max-width: 760px) {
 			width: 100%;
@@ -53,15 +56,18 @@
 		}
 		&__body-left {
 			margin: 0 var(--objects-indents1);
-			margin-right: calc(var(--objects-indents1) * 2);
-			flex: 1 1 60%;
+			// margin-right: calc(var(--objects-indents1) * 2);
+			margin-right: calc(var(--objects-indents1) * 4);
+			// flex: 1 1 60%;
+			flex: 1 1 45%;
 			@media (max-width: 1080px) {
 				flex: 1 1 auto;
 			}
 		}
 		&__body-right {
 			margin: 0 var(--objects-indents1) 0 0;
-			flex: 1 1 30%;
+			// flex: 1 1 30%;
+			flex: 1 1 45%;
 			font-size: 0.8em;
 			color: var(--color-gray);
 			@media (max-width: 1080px) {

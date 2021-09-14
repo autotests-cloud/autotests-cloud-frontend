@@ -16,9 +16,9 @@ a {
 	@media (max-width: 760px) {
 		margin-top: 1em;
 	}
-	>.wrapper {
+	> .wrapper {
 		position: absolute;
-		width: calc(100% - var(--grid-sides)*2);
+		width: calc(100% - var(--grid-sides) * 2);
 		// pointer-events: none;
 	}
 	.block-first {
@@ -54,7 +54,7 @@ a {
 	align-items: center;
 	width: 100%;
 
-	>h3 {
+	> h3 {
 		font-size: 1.6rem;
 		font-weight: 500;
 		margin-bottom: var(--objects-indents1);
@@ -70,7 +70,7 @@ a {
 		flex-direction: column;
 	}
 	section.console {
-		width: calc(50% - var(--grid-gutter)/2);
+		width: calc(50% - var(--grid-gutter) / 2);
 		margin-right: var(--grid-gutter);
 		@media (max-width: 760px) {
 			width: 100%;
@@ -78,7 +78,7 @@ a {
 		}
 	}
 	section.telegram-window {
-		width: calc(50% - var(--grid-gutter)/2);
+		width: calc(50% - var(--grid-gutter) / 2);
 		@media (max-width: 760px) {
 			display: none;
 		}

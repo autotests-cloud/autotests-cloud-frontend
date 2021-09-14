@@ -395,7 +395,7 @@ a:focus, a:hover, a:active, a:visited {
 
 .heycisco-proj .start > .wrapper {
   position: absolute;
-  width: calc(100% - var(--grid-sides)*2);
+  width: calc(100% - var(--grid-sides) * 2);
 }
 
 .heycisco-proj .start .block-first {
@@ -461,7 +461,7 @@ a:focus, a:hover, a:active, a:visited {
 }
 
 .heycisco-proj .wrapper.block-second section.console {
-  width: calc(50% - var(--grid-gutter)/2);
+  width: calc(50% - var(--grid-gutter) / 2);
   margin-right: var(--grid-gutter);
 }
 
@@ -473,7 +473,7 @@ a:focus, a:hover, a:active, a:visited {
 }
 
 .heycisco-proj .wrapper.block-second section.telegram-window {
-  width: calc(50% - var(--grid-gutter)/2);
+  width: calc(50% - var(--grid-gutter) / 2);
 }
 
 @media (max-width: 760px) {
@@ -869,9 +869,11 @@ a:focus, a:hover, a:active, a:visited {
 }
 
 .heycisco-proj .main-block .cards {
+  margin: 0 auto;
   margin-top: 3em;
   opacity: 0;
   pointer-events: none;
+  max-width: 800px;
   transform-origin: 50% 0;
   transition-duration: 0.5s;
   -o-transition-timing-function: ease-out;
@@ -893,14 +895,13 @@ a:focus, a:hover, a:active, a:visited {
 
 .heycisco-proj .main-block .cards .card {
   background: var(--color-white);
-  width: calc(50% - var(--cards--indent) / 2);
+  width: 100%;
   box-shadow: var(--box-shadow);
   border-radius: var(--radius1);
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-right: var(--cards--indent);
   margin-bottom: var(--cards--indent);
 }
 
@@ -935,8 +936,8 @@ a:focus, a:hover, a:active, a:visited {
 
 .heycisco-proj .main-block .cards .card__body-left {
   margin: 0 var(--objects-indents1);
-  margin-right: calc(var(--objects-indents1) * 2);
-  flex: 1 1 60%;
+  margin-right: calc(var(--objects-indents1) * 4);
+  flex: 1 1 45%;
 }
 
 @media (max-width: 1080px) {
@@ -947,7 +948,7 @@ a:focus, a:hover, a:active, a:visited {
 
 .heycisco-proj .main-block .cards .card__body-right {
   margin: 0 var(--objects-indents1) 0 0;
-  flex: 1 1 30%;
+  flex: 1 1 45%;
   font-size: 0.8em;
   color: var(--color-gray);
 }
