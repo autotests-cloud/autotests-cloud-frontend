@@ -1284,6 +1284,11 @@ a:focus, a:hover, a:active, a:visited {
   margin-right: 0;
   margin-left: 0.25em;
   padding: 0.25em;
+  pointer-events: auto;
+}
+
+.heycisco-proj .main-block .added-tests ul .tasks__task .task__btn button * {
+  pointer-events: none;
 }
 
 .heycisco-proj .main-block .added-tests ul .tasks__task .task__btn button svg {

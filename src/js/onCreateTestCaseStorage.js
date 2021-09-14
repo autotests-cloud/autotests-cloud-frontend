@@ -87,7 +87,7 @@ function addParentActive(event) {
 		el.classList.remove("active");
 	});
 
-	let container = event.target.parentNode.parentNode.parentNode.parentNode; //родитель родитель родителя родителя
+	let container = event.target.parentNode.parentNode; //родитель родитель родителя родителя
 	console.log(container);
 
 	let classList = container.classList;
