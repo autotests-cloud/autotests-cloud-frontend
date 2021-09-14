@@ -1267,13 +1267,28 @@ a:focus, a:hover, a:active, a:visited {
 
 .heycisco-proj .main-block .added-tests ul .tasks__task .task__btn {
   position: absolute;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  align-content: center;
+  height: 1.2em;
   right: 0;
-  top: 0rem;
+  top: 0;
 }
 
 .heycisco-proj .main-block .added-tests ul .tasks__task .task__btn button {
   color: var(--color-orange);
-  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0;
+  margin-left: 0.25em;
+  padding: 0.25em;
+}
+
+.heycisco-proj .main-block .added-tests ul .tasks__task .task__btn button svg {
+  margin-right: 0;
+  max-height: 100%;
 }
 
 .heycisco-proj .main-block .added-tests ul .tasks__task .task__btn .btn-delete {
@@ -1303,11 +1318,11 @@ a:focus, a:hover, a:active, a:visited {
 }
 
 .heycisco-proj .main-block .added-tests ul .tasks__task.active .task__btn .btn-delete {
-  display: inline-block;
+  display: flex;
 }
 
 .heycisco-proj .main-block .added-tests ul .tasks__task.active .task__btn .btn-save {
-  display: inline-block;
+  display: flex;
 }
 
 .heycisco-proj .main-block .added-tests ul .tasks__task.active .task__btn .btn-edit {

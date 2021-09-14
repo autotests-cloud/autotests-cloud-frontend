@@ -11,8 +11,6 @@ const createTestCaseForm = document.querySelector("#modal_form");
 const createTestCaseField = document.querySelector("#tc_title");
 const createStepField = document.querySelector("#text_case");
 const createTestCaseButton = document.querySelector("#add_test_case__submit");
- 
-
 
 tasks.forEach((data) => {
 	onCreateTestCase({ data });
@@ -25,7 +23,6 @@ createTestCaseField.addEventListener("input", () => {
 createStepField.addEventListener("input", () => {
 	createTestCaseButton.disabled = !createStepField.value;
 });
-
 
 createTestCaseForm.addEventListener("submit", (event) => {
 	event.preventDefault();
@@ -52,7 +49,6 @@ createTestCaseForm.addEventListener("submit", (event) => {
 // let tcEditBtn = document.querySelectorAll(".btn-edit");
 // tcEditBtn.forEach(btn=> {
 //   btn.addEventListener("click", taskActive);
- 
 
 // });
 
@@ -69,7 +65,6 @@ createTestCaseForm.addEventListener("submit", (event) => {
 //     taskEditItem.classList.add("active");
 //   })
 
-
 // }
 // function taskSave() {
 //   taskEditing.forEach(taskEditItem=> {
@@ -78,38 +73,40 @@ createTestCaseForm.addEventListener("submit", (event) => {
 
 //  }
 
+//! Ещё одна реализация
 
- let edit = document.querySelectorAll('.btn-edit');
+let edit = document.querySelectorAll(".btn-edit");
 
-
- let save = document.querySelectorAll(".btn-save");
-
- edit.forEach(btn=> {
-  btn.addEventListener("click", toggleParentActive);
- 
+edit.forEach((btn) => {
+	btn.addEventListener("click", addParentActive);
 });
 
-save.forEach(btn => {
-  btn.addEventListener("click", toggleParentActive);
+function addParentActive(event) {
+	var containers = document.querySelectorAll(".tasks__task");
+	[].forEach.call(containers, function (el) {
+		el.classList.remove("active");
+	});
 
-});
+	let container = event.target.parentNode.parentNode.parentNode.parentNode; //родитель родитель родителя родителя
+	console.log(container);
 
-function toggleParentActive(event) {
-  let container = event.target.parentNode.parentNode.parentNode.parentNode; //родитель родитель родителя родителя
-  console.log(container);
-  let classList = container.classList;
-  
- (Array.from(classList).indexOf('active') === -1)
-  ? classList.add('active') 
-  : classList.remove('active');
+	let classList = container.classList;
+	Array.from(classList).indexOf("active");
+	classList.add("active");
 }
 
+// Добавил heycisco
+var saveIt = document.querySelectorAll(".btn-save");
+saveIt.forEach(function (savedClick) {
+	savedClick.addEventListener("click", function () {
+		var containers = document.querySelectorAll(".tasks__task");
+		[].forEach.call(containers, function (el) {
+			el.classList.remove("active");
+		});
+	});
+});
 
-
-
-
-
-// Кнопки добавленных тест-кейсов 
+// Кнопки добавленных тест-кейсов
 // function tcValueEdit() {
 // 	let tcEditBtn = document.querySelectorAll(".btn-edit");
 // 	let tcSaveBtn = document.querySelectorAll(".btn-save");
@@ -120,12 +117,11 @@ function toggleParentActive(event) {
 //   function taskActive() {
 //     taskEditing.classList.add("active");
 //   }
-  
+
 // 	function taskSave() {
 // 		taskEditing.classList.remove("active");
 //  	}
 // }
-
 
 function onCreateTestCase({ data }) {
 	const clone = template.content.cloneNode(true);
@@ -156,4 +152,3 @@ function onCreateTestCase({ data }) {
 
 	container.appendChild(clone);
 }
-

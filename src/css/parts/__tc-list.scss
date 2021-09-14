@@ -39,11 +39,25 @@
 			}
 			.task__btn {
 				position: absolute;
+				display: flex;
+				align-items: stretch;
+				justify-content: flex-end;
+				align-content: center;
+				height: 1.2em;
 				right: 0;
-				top: 0rem;
+				top: 0;
 				button {
 					color: var(--color-orange);
-					font-size: 0.85rem;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					margin-right: 0;
+					margin-left: 0.25em;
+					padding: 0.25em;
+					svg {
+						margin-right: 0;
+						max-height: 100%;
+					}
 				}
 				.btn-delete {
 					display: none;
@@ -71,10 +85,10 @@
 				}
 				.task__btn {
 					.btn-delete {
-						display: inline-block;
+						display: flex;
 					}
 					.btn-save {
-						display: inline-block;
+						display: flex;
 					}
 					.btn-edit {
 						display: none;
