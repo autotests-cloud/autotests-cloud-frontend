@@ -30,7 +30,7 @@ button.main {
 	justify-content: center;
 	height: 3.4rem;
 	margin: var(--grid-gutter);
-	width: 680px;
+	width: 760px;
 	position: relative;
 	@media (max-width: 760px) {
 		flex-direction: column;
@@ -200,7 +200,7 @@ button.options {
 		display: block;
 		position: absolute;
 		top: 0.1em;
-		left: 0.5em;
+		left: 0.45em;
 		width: 0.4em;
 		height: 0.8em;
 		border-style: solid;
@@ -260,13 +260,14 @@ button.options {
 	}
 	label:before {
 		content: "";
+		width: 1em;
+		height: 1em;
 		border: 2px solid var(--color-gray);
 		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
 			inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
 		padding: 0.45em;
 		display: block;
 		position: absolute;
-		vertical-align: middle;
 		margin-right: var(--objects-indents1);
 		top: 0em;
 		left: 0;
@@ -278,7 +279,6 @@ button.options {
 		height: 0.6em;
 		display: block;
 		position: absolute;
-		vertical-align: middle;
 		margin-right: var(--objects-indents1);
 		top: 0.3em;
 		left: 0.3em;
@@ -313,10 +313,11 @@ button.options {
 	input {
 		font-weight: 400;
 		background: var(--color-background);
-		padding: 0 0.4em;
+		padding: 0.2em 0.4em;
 		flex: 0 0 auto;
 		color: var(--color-text);
 		border: 2px solid var(--color-background);
+		font-size: 0.95em;
 		@include transition-out;
 		transition-property: border;
 		border-radius: var(--radius2) 0 0 var(--radius2);
@@ -329,10 +330,11 @@ button.options {
 	button {
 		background: var(--color-orange);
 		color: var(--color-white);
-		padding: 0 0.4em;
+		padding: 0.2em 0.4em;
 		flex: 0 0 auto;
 		transition-property: background;
 		border-radius: 0 var(--radius2) var(--radius2) 0;
+		font-size: 0.95em;
 		&:hover {
 			background: var(--color-orange2);
 			transition-property: background;
