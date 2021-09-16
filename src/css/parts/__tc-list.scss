@@ -58,12 +58,19 @@
 					margin-left: 0.25em;
 					padding: 0.25em;
 					pointer-events: auto;
+					@include transition-out;
+					transition-property: color;
 					* {
 						pointer-events: none;
 					}
 					svg {
 						margin-right: 0;
 						max-height: 100%;
+					}
+					&:hover {
+						color: var(--color-orange2);
+						@include transition-in;
+						transition-property: color;
 					}
 				}
 				.btn-delete {

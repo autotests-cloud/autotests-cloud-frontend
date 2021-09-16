@@ -1288,6 +1288,9 @@ a:focus, a:hover, a:active, a:visited {
   margin-left: 0.25em;
   padding: 0.25em;
   pointer-events: auto;
+  transition-duration: 0.5s;
+  -o-transition-timing-function: ease-out;
+  transition-property: color;
 }
 
 .heycisco-proj .main-block .added-tests ul .tasks__task .task__btn button * {
@@ -1297,6 +1300,13 @@ a:focus, a:hover, a:active, a:visited {
 .heycisco-proj .main-block .added-tests ul .tasks__task .task__btn button svg {
   margin-right: 0;
   max-height: 100%;
+}
+
+.heycisco-proj .main-block .added-tests ul .tasks__task .task__btn button:hover {
+  color: var(--color-orange2);
+  transition-duration: 0.25s;
+  -o-transition-timing-function: ease-in;
+  transition-property: color;
 }
 
 .heycisco-proj .main-block .added-tests ul .tasks__task .task__btn .btn-delete {
