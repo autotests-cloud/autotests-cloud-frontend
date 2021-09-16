@@ -22,7 +22,7 @@ import {
 	checkBoxesJenkins,
 } from "./ui.js"; // Работа c UI и DOM
 
-import "./onCreateTestCaseStorage.js"; // Модуль для редактирования списка в Storage
+import {createTestCaseButton} from "./onCreateTestCaseStorage.js";// Модуль для редактирования списка в Storage
 
 import { create_UUID } from "./StringUtils.js"; // Утилита для создание уникального UUID
 import dataLoaderFromStorage from "./dataLoaderFromStorage.js"; //Выбираем данные для бекаэнда
@@ -223,3 +223,4 @@ window.onload = function setContentHeightFirst() {
 modalBtn.addEventListener("click", modalOpen);
 modalBtnClose.addEventListener("click", modalClose);
 optionsBtn.addEventListener("click", optionsToggle);
+createTestCaseButton.addEventListener("click", modalClose);
