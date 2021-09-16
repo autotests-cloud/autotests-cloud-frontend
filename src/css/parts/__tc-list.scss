@@ -31,12 +31,14 @@
 				cursor: default;
 				pointer-events: none;
 				word-break: break-all;
+				padding: 0 2px;
 			}
 			.step__text {
 				margin-top: -1.5em;
 				opacity: 0;
 				font-weight: 300;
 				display: none;
+				padding: 0 4px;
 			}
 			.task__btn {
 				position: absolute;
@@ -44,7 +46,7 @@
 				align-items: stretch;
 				justify-content: flex-end;
 				align-content: center;
-				height: 1.2em;
+				height: 1.4em;
 				right: 0;
 				top: 0;
 				button {
@@ -56,12 +58,19 @@
 					margin-left: 0.25em;
 					padding: 0.25em;
 					pointer-events: auto;
+					@include transition-out;
+					transition-property: color;
 					* {
 						pointer-events: none;
 					}
 					svg {
 						margin-right: 0;
 						max-height: 100%;
+					}
+					&:hover {
+						color: var(--color-orange2);
+						@include transition-in;
+						transition-property: color;
 					}
 				}
 				.btn-delete {

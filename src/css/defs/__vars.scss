@@ -11,7 +11,7 @@
 	// Отступы от края экрана
 	--grid-sides: calc(32px * var(--c));
 	// Отступы между колонками и по бокам секций
-	--grid-gutter: calc(12px * var(--c));
+	--grid-gutter: calc(14px * var(--c));
 	// Отступы сверху/снизу секций
 	--section-padding: var(--grid-gutter);
 	// Ограничение ширины контента
@@ -45,11 +45,11 @@
 	--box-shadow-modal: 0 0 200px #00000060;
 
 	// Размеры
-	--pictogram-size: calc(29.5px * var(--c));
-	--pictogram-size-cards: calc(22px * var(--c));
-	--objects-indents1: 0.5em;
+	--pictogram-size: calc(36px * var(--c));
+	--pictogram-size-cards: calc(25px * var(--c));
+	--objects-indents1: 0.7em;
 	--objects-indents2: calc(2em * var(--c));
-	--cards--indent: calc(24px * var(--c));
+	--cards--indent: calc(32px * var(--c));
 
 	// Скругления
 	--radius1: 9px;
