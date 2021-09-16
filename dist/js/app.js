@@ -214,6 +214,7 @@ function modalClose() {
 // Функция тогл
 function optionsToggle() {
   body.classList.toggle("options-open");
+  return true;
 }
 
 window.onload = function setContentHeightFirst() {
@@ -224,6 +225,14 @@ modalBtn.addEventListener("click", modalOpen);
 modalBtnClose.addEventListener("click", modalClose);
 optionsBtn.addEventListener("click", optionsToggle);
 
-localStorage.getItem("steps") !== null || localStorage.length > 0
-  ? optionsToggle()
-  : body.classList.toggle("options-open");
+
+// localStorage.getItem("steps") !== null || localStorage.length > 0
+//   ? optionsToggle()
+//   : body.classList.toggle("options-open");
+
+
+  if (localStorage.length) {
+    optionsToggle();
+    let result = optionsToggle();
+    console.log(`Срабатывает или нет?*`, result);
+   }
