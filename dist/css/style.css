@@ -1257,6 +1257,7 @@ a:focus, a:hover, a:active, a:visited {
   font-weight: 500;
   cursor: default;
   pointer-events: none;
+  word-break: break-all;
 }
 
 .heycisco-proj .main-block .added-tests ul .tasks__task .step__text {
