@@ -25,7 +25,7 @@ createStepField.addEventListener("input", () => {
 });
 
 createTestCaseForm.addEventListener("submit", (event) => {
-  // event.preventDefault(); // Тупое решение но рабочее
+  event.preventDefault(); // Тупое решение но рабочее
 
   const title = createTestCaseField.value;
   const steps = createStepField.value;
@@ -104,6 +104,7 @@ function onCreateTestCase({ data }) {
   const step = clone.querySelector(".step__text");
   const remove = clone.querySelector(".btn-delete");
   const edit = clone.querySelector(".btn-edit");
+  const save = clone.querySelector(".btn-save");
   console.log("Элементы после cloneNode", edit);
 
   title.innerHTML = data.title;
@@ -127,8 +128,19 @@ function onCreateTestCase({ data }) {
     testCase.remove();
   });
 
-  
+  edit.addEventListener("click", (event) => {
+    allTasks.forEach((el) => {
+      el.classList.remove("active");
+    });
+    let oneTask = event.target.parentNode.parentNode;
+    let classList = oneTask.classList;
+    Array.from(classList).indexOf("active");
+    classList.add("active");
+  });
+
+  save.addEventListener("click", (event) => {
+    event.target.parentNode.parentNode.classList.remove('active');
+  });
+
   container.appendChild(clone);
 }
- 
-export {createTestCaseButton}
