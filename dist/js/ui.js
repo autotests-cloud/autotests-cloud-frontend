@@ -91,6 +91,8 @@ function calcContentHeight() {
 	}
 }
 
+
+
 export {
 	informationToggle,
 	mainFormSectionToggle,
