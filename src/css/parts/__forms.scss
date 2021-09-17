@@ -124,6 +124,10 @@ button.options {
 		}
 	}
 }
+.main-block__page.cards-active form {
+	height: auto;
+}
+
 .main-block__page.cards-active button.options {
 	&:after {
 		content: "Скрыть опции";

@@ -11,7 +11,6 @@ import {
   informationSection,
   informationToggle,
   mainFormSectionToggle,
-  calcContentHeight,
   titleTextarea,
   consoleContainer,
   consoleContainerContent,
@@ -145,7 +144,6 @@ const initForm = () => {
     // Блоку div#app добавляеем невидимости
     appBlock.classList.add("hidden");
     informationSection.classList.add("hidden");
-    calcContentHeight();
 
     // В переменую formData мы присваиваем конструктор FormData(mainForm), который создаёт новый объект FormData т.е
     // HTML-форму на основе mainForm главной формы form#objective.
@@ -211,28 +209,11 @@ function modalOpen() {
 function modalClose() {
   body.classList.remove("modal");
 }
-// Функция тогл
-function optionsToggle() {
-  body.classList.toggle("options-open");
-  return true;
-}
-
-window.onload = function setContentHeightFirst() {
-  appBlock.style.height = "calc(" + mainFormSize.offsetHeight + "px + 1.5rem)";
-};
 
 modalBtn.addEventListener("click", modalOpen);
 modalBtnClose.addEventListener("click", modalClose);
-optionsBtn.addEventListener("click", optionsToggle);
 
-
-// localStorage.getItem("steps") !== null || localStorage.length > 0
-//   ? optionsToggle()
-//   : body.classList.toggle("options-open");
-
-
-  if (localStorage.length) {
-    optionsToggle();
-    let result = optionsToggle();
-    console.log(`Срабатывает или нет?*`, result);
-   }
+if (localStorage.steps && localStorage.steps.length > 0) {
+  document.querySelector(".main-block__page")
+    .classList.add('cards-active');
+}

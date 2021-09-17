@@ -65,38 +65,15 @@ function informationToggle() {
 
 // Скрытие-показ опций
 mainFormSectionTrigger.addEventListener("click", mainFormSectionToggle);
-mainFormSectionTrigger.addEventListener("click", calcContentHeight);
 mainFormSectionTrigger2.addEventListener("click", mainFormSectionToggle);
-mainFormSectionTrigger2.addEventListener("click", calcContentHeight);
 function mainFormSectionToggle() {
 	mainFormSection.classList.toggle("cards-active");
 }
-
-function calcContentHeight() {
-	let firstBlockSize = document.querySelector(".wrapper.block-first");
-	let secondBlockSize = document.querySelector(".wrapper.block-second");
-	let cardsActiveCheck = document.querySelector(
-		".main-block__page.cards-active"
-	);
-	let secondStepCheck = document.querySelector(".start.hidden");
-	if (secondStepCheck !== null) {
-		appBlock.style.height =
-			"calc(" + secondBlockSize.offsetHeight + "px + 2em)";
-	} else if (cardsActiveCheck !== null) {
-		appBlock.style.height =
-			"calc(" + firstBlockSize.offsetHeight + "px + 3em)";
-	} else {
-		appBlock.style.height =
-			"calc(" + mainFormSize.offsetHeight + "px + 1.5rem)";
-	}
-}
-
 
 
 export {
 	informationToggle,
 	mainFormSectionToggle,
-	calcContentHeight,
 	mainBtn,
 	mainBtn2,
 	appBlock,

@@ -16,31 +16,20 @@ a {
 	@media (max-width: 760px) {
 		margin-top: 1em;
 	}
-	> .wrapper {
-		position: absolute;
-		width: calc(100% - var(--grid-sides) * 2);
-		// pointer-events: none;
-	}
 	.block-first {
-		opacity: 1;
-		@include transition-in;
-		transition-property: opacity;
 		pointer-events: auto;
 	}
 	.block-second {
-		opacity: 0;
-		@include transition-out;
-		transition-property: opacity;
+		display: none;
 		pointer-events: none;
 	}
 	&.hidden {
 		.block-first {
-			opacity: 0;
-			@include transition-out;
-			transition-property: opacity;
+			display: none;
 			pointer-events: none;
 		}
 		.block-second {
+			display: flex;
 			opacity: 1;
 			@include transition-in;
 			transition-property: opacity;
@@ -64,7 +53,7 @@ a {
 	}
 }
 .wrapper.block-second {
-	display: flex;
+	// display: flex;
 	align-items: flex-start;
 	@media (max-width: 760px) {
 		flex-direction: column;
