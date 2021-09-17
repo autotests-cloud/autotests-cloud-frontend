@@ -213,7 +213,7 @@ function modalClose() {
 modalBtn.addEventListener("click", modalOpen);
 modalBtnClose.addEventListener("click", modalClose);
 
-if (localStorage.steps && localStorage.steps.length > 0) {
+if (localStorage.steps && JSON.parse(localStorage.steps).length > 0) {
   document.querySelector(".main-block__page")
     .classList.add('cards-active');
 }
