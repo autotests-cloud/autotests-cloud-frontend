@@ -35,6 +35,12 @@
 		&:nth-child(2n) {
 			margin-right: 0;
 		}
+		&.card-3 {
+			flex-direction: column;
+			.form-group {
+				margin: 0
+			}
+		}
 
 		img {
 			height: var(--pictogram-size-cards);

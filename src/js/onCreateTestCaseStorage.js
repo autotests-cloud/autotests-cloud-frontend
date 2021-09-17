@@ -116,9 +116,8 @@ function onCreateTestCase({ data }) {
     storage.update(data);
   });
 
-  step.addEventListener("input", () => {
-    data.steps = step.innerHTML;
-
+  step.addEventListener("input", (e) => {
+    data.steps = e.target.value;
     storage.update(data);
   });
 
