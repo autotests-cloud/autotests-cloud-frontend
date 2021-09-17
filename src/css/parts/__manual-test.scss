@@ -1,6 +1,6 @@
 .manual-test.modal-body {
-	width: 100vw;
-	height: 100vh;
+	box-sizing: border-box;
+	height: auto;
 	background: #0000007d;
 	position: fixed;
 	top: 0;

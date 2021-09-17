@@ -10,7 +10,6 @@ a {
 }
 .start {
 	height: 12rem;
-	overflow: hidden;
 	padding: 0 var(--grid-sides);
 	position: relative;
 	@media (max-width: 760px) {
@@ -20,19 +19,21 @@ a {
 		pointer-events: auto;
 	}
 	.block-second {
-		display: none;
 		pointer-events: none;
+		position: fixed;
+		transition-property: transform;
+		transform: translateX(-4000px);
 	}
 	&.hidden {
 		.block-first {
-			display: none;
+			transform: translateX(-4000px);
+			position: fixed;
 			pointer-events: none;
 		}
 		.block-second {
+			position: static;
+			transform: translateX(0px);
 			display: flex;
-			opacity: 1;
-			@include transition-in;
-			transition-property: opacity;
 			pointer-events: auto;
 		}
 	}
