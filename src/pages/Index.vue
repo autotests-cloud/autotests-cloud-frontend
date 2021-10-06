@@ -1,9 +1,10 @@
 <template>
   <layout class="page-home">
-    <p class="text-xl font-bold">Стек</p>
-    <p class="text-xl font-bold">Конфигурация</p>
-    <p class="text-xl font-bold">Форма</p>
-    <p class="text-xl font-bold">Поддержка</p>
+    <custom-input
+      placeholder="https://"
+      @change="onInputChange"
+    />
+    <a href="" @click.prevent="submitForm" >Сгенерировать</a>
   </layout>
 </template>
 
@@ -16,9 +17,22 @@ query {
 </page-query>
 
 <script>
+import CustomInput from '../components/Input.vue';
 
 export default {
-  components: { }
+  data() {
+    return {
+      formData: {
+        url: null,
+      },
+    };
+  },
+  components: { CustomInput, },
+  methods: {
+    onInputChange(value) {
+      this.formData.url = value;
+    }
+  }
 };
 </script>
 
