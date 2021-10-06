@@ -1,5 +1,5 @@
 <template>
-  <layout clas="page-home">
+  <layout class="page-home">
     <p class="text-xl font-bold">Стек</p>
     <p class="text-xl font-bold">Конфигурация</p>
     <p class="text-xl font-bold">Форма</p>
