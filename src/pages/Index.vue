@@ -4,7 +4,9 @@
       placeholder="https://"
       @change="onInputChange"
     />
-    <a href="" @click.prevent="submitForm" >Сгенерировать</a>
+    <custom-button @click="onButtonClick">
+      Сгененировать
+    </custom-button>
   </layout>
 </template>
 
@@ -18,8 +20,13 @@ query {
 
 <script>
 import CustomInput from '../components/Input.vue';
+import CustomButton from '../components/Button.vue';
 
 export default {
+  components: { 
+    CustomInput,
+    CustomButton,
+  },
   data() {
     return {
       formData: {
@@ -27,10 +34,12 @@ export default {
       },
     };
   },
-  components: { CustomInput, },
   methods: {
     onInputChange(value) {
       this.formData.url = value;
+    },
+    onButtonClick() {
+      console.log('about to submit form with', this.formData);
     }
   }
 };
