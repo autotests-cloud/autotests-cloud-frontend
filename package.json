@@ -1,0 +1,22 @@
+{
+  "name": "autotests-cloud-gridsome",
+  "private": true,
+  "scripts": {
+    "serve": "gridsome develop",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore",
+    "build": "gridsome build"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-vue": "^7.16.0",
+    "gridsome": "^0.7.23",
+    "gridsome-plugin-seo": "^1.0.2",
+    "tailwindcss": "^2.2.7",
+    "typeface-inter": "^3.18.1"
+  }
+}
