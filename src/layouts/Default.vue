@@ -1,11 +1,16 @@
 <template>
-  <div class="layout container">
+  <div class="container layout">
     <header class="relative py-10 header">
       <div class="flex items-center justify-between">
         <g-link
           to="/"
-          class="flex-shrink-0"
+          class="flex items-center flex-shrink-0"
         >
+          <g-image
+            src="~/assets/img/logo.svg"
+            class="w-full mr-2"
+            immediate
+          />
           <h1 class="text-xl font-bold">Autotests.cloud</h1>
         </g-link>
 
@@ -58,17 +63,6 @@ query {
 <script>
 
 export default {
-  metaInfo() {
-    return this.$seo({
-      description: this.$static.metadata.siteDescription,
-      openGraph: {
-        description: this.$static.metadata.siteDescription,
-        image: {
-          url: '/', // @todo add og image
-        },
-      },
-    });
-  },
   data() {
     return {
       currentYear: new Date().getFullYear(),
