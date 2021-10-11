@@ -1,24 +1,16 @@
 <template>
-
 <div>
-
   <input type="checkbox" class="w-4 h-4 text-yellow-500 border-yellow-300 rounded focus:ring-yellow-500" v-model="allSelected"> Выбрать все
-
-  
   <ul>
     <li v-for="caption in captions">
        <input type="checkbox" class="w-4 h-4 text-yellow-500 border-yellow-300 rounded focus:ring-yellow-500 indent"  v-model="caption.selected"> {{ caption.name }}
     </li>
-  </ul>
-  
-
-   
+  </ul> 
 </div>
 </template>
 
 <script>
  
-
 export default {
   name: 'CheckBoxesTree',
  
@@ -55,7 +47,6 @@ export default {
       }
     }
   },
-
 }
 
 </script>
