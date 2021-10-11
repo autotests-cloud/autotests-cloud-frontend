@@ -2,7 +2,7 @@
 <div>
   <input type="checkbox" class="w-4 h-4 text-yellow-500 border-yellow-300 rounded focus:ring-yellow-500" v-model="allSelected"> Выбрать все
   <ul>
-    <li :key="id" v-for="(caption, id) in captions">
+    <li :key="id" v-for="(caption, id) in captions" id>
        <input type="checkbox" class="w-4 h-4 text-yellow-500 border-yellow-300 rounded focus:ring-yellow-500 indent" 
        v-model="caption.selected"> {{ caption.name }}
     </li>
@@ -51,3 +51,12 @@ export default {
 }
 
 </script>
+<style>
+.indent {
+  margin-left: 1em;
+}
+
+.db-indent {
+  margin-left: 2em;
+}
+</style>

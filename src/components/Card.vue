@@ -4,7 +4,7 @@
     class="overflow-hidden bg-white divide-y divide-gray-200 rounded-lg shadow"
   >
     <div class="px-4 py-5 bg-gray-100 sm:px-6">
-      хедер
+ 
       <!-- Content goes here -->
       <!-- We use less vertical padding on card headers on desktop than on body sections -->
     </div>
@@ -18,8 +18,8 @@
         <div>3</div>
       </div>
     </div>
-    <div class="px-4 py-4 sm:px-6">
-      футер
+    <div class="px-4 py-4 bg-gray-100 sm:px-6">
+     
       <!-- Content goes here -->
       <!-- We use less vertical padding on card footers at all sizes than on headers or body sections -->
     </div>
@@ -36,12 +36,3 @@ export default {
 };
 </script>
 
-<style>
-.indent {
-  margin-left: 1em;
-}
-
-.db-indent {
-  margin-left: 2em;
-}
-</style>
