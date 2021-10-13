@@ -12,14 +12,14 @@
         <slot name="header">
         Модалка!
         </slot>
-        <button
+        <CustomButton
           type="button"
           class="btn-close"
           @click="close"
           aria-label="Close modal"
         >
           x
-        </button>
+        </CustomButton>
       </header>
 
       <section class="modal-body" id="modalDescription"
@@ -33,9 +33,9 @@
         <slot name="footer">
           This is the default footer!
         </slot>
-        <custom-button @click="close">
+        <CustomButton @click="close">
          Закрыть модалку
-        </custom-button>
+        </CustomButton>
       </footer>
     </div>
   </div>
